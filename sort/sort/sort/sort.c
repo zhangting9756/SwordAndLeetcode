@@ -25,7 +25,7 @@ void printArray(int *array,int length)
 	}
 }
 
-void bubleAsceningSort(int *array,int length)
+void bubleAsceningSort(int *array,int length)     //冒泡排序O(n2)
 {
 	int i,j;
 	int temp;
@@ -48,7 +48,7 @@ void bubleAsceningSort(int *array,int length)
 	}
 }
 
-void simpleSelectSort(int *array,int length)
+void simpleSelectSort(int *array,int length)  /*简单选择插入，循环一遍找出值最小的索引，然后与前面的值交换O(n2)*/
 {
 	int tempIndex,temp;
 	int i,j;
@@ -74,7 +74,7 @@ void simpleSelectSort(int *array,int length)
 	}
 }
 
-void directInsertSort(int *array,int length)
+void directInsertSort(int *array,int length)     /*扑克牌的插入方式，前面的都是有序的O(n2)*/
 {
 	int i,j,temp;
 	if((array == NULL)||(length == 0))
@@ -96,7 +96,7 @@ void directInsertSort(int *array,int length)
 	}
 }
 
-void shellSort(int *array,int length)
+void shellSort(int *array,int length)        /*希尔排序，将其分解成几个小子序列，每个子序列插入排序，O(n*logn)*/
 {
 	int i,j,temp;
 	int increment = length;
@@ -106,7 +106,7 @@ void shellSort(int *array,int length)
 		for(i=increment+1;i<length;i++)
 		{
 			temp=array[i];
-			for(j=i-increment;j>0&&array[j]>temp;j-=increment)
+			for(j=i-increment;j>=0&&array[j]>temp;j-=increment)
 			{
 				array[j+increment]=array[j];
 			}
