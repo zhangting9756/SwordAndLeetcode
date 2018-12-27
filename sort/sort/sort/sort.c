@@ -1,15 +1,27 @@
 #include<stdio.h>
+#include<stdlib.h>
 void printArray(int *array,int length);
 void bubleAsceningSort(int *array,int length);
 void simpleSelectSort(int *array,int length);
 void directInsertSort(int *array,int length);
 void shellSort(int *array,int length);
+void HeapAdjust(int H[],int start,int end);
+void HeapSort(int H[],int length);
+void merge(int a[], int start, int mid, int end);
+void merge_groups(int a[], int len, int gap);
+void merge_sort_down2up(int a[], int len);
 int main()
 {
-	int a[10]={1,5,0,7,4,9,8,3,2,6};
-	shellSort(a,10);
+	int a[10]={10,5,0,7,4,9,8,32,2,6};
+	merge_sort_down2up(a,10);
 	printArray(a,10);
 
+}
+void swap(int *a,int *b)   //¸Ãº¯ÊıÓÃÓÚ½»»»Á½¸ö±äÁ¿µÄÖµ
+{
+	int temp=*a;
+	*a=*b;
+	*b=temp;
 }
 void printArray(int *array,int length)
 {
@@ -114,3 +126,85 @@ void shellSort(int *array,int length)        /*Ï£¶ûÅÅĞò£¬½«Æä·Ö½â³É¼¸¸öĞ¡×ÓĞòÁĞ£
 		}
 	} while (increment>1);
 }
+
+void HeapAdjust(int  A[], int i, int N)					  /*¶ÑÅÅĞò£¬ÍêÈ«¶ş²æÊ÷µÄĞÔÖÊ£¬O(n*logn)*/
+{
+	int child;
+	int Tmp;
+
+	for (Tmp = A[i]; 2*i+1 < N; i = child){
+		child = 2*i+1; //×¢ÒâÊı×éÏÂ±êÊÇ´Ó0¿ªÊ¼µÄ£¬ËùÒÔ×óº¢×ÓµÄÇó·¢²»ÊÇ2*i
+		if (child != N - 1 && A[child + 1] > A[child])
+			++child;                //ÕÒµ½×î´óµÄ¶ù×Ó½Úµã
+		if (Tmp < A[child])
+			A[i] = A[child];
+		else
+			break;
+	}
+	A[i] = Tmp;
+}
+void HeapSort(int A[], int N)                              /*¶ÑÅÅĞò£¬ÍêÈ«¶ş²æÊ÷µÄĞÔÖÊ£¬O(n*logn)*/
+{
+	int i;
+	for (i = N / 2; i >= 0; --i)
+		HeapAdjust(A, i, N);    //¹¹Ôì¶Ñ
+	for(i=N-1;i>0;--i)
+	{
+		swap(&A[0],&A[i]);        //½«×î´óÔªËØ£¨¸ù£©ÓëÊı×éÄ©Î²ÔªËØ½»»»£¬´Ó¶øÉ¾³ı×î´óÔªËØ£¬ÖØĞÂ¹¹Ôì¶Ñ
+		HeapAdjust(A, 0, i);
+	}
+}
+
+void merge(int a[], int start, int mid, int end)
+{
+	int *tmp = (int *)malloc((end-start+1)*sizeof(int));    // tmpÊÇ»ã×Ü2¸öÓĞĞòÇøµÄÁÙÊ±ÇøÓò
+	int i = start;            // µÚ1¸öÓĞĞòÇøµÄË÷Òı
+	int j = mid + 1;        // µÚ2¸öÓĞĞòÇøµÄË÷Òı
+	int k = 0;                // ÁÙÊ±ÇøÓòµÄË÷Òı
+
+	while(i <= mid && j <= end)
+	{
+		if (a[i] <= a[j])
+			tmp[k++] = a[i++];
+		else
+			tmp[k++] = a[j++];
+	}
+
+	while(i <= mid)
+		tmp[k++] = a[i++];
+
+	while(j <= end)
+		tmp[k++] = a[j++];
+
+	// ½«ÅÅĞòºóµÄÔªËØ£¬È«²¿¶¼ÕûºÏµ½Êı×éaÖĞ¡£
+	for (i = 0; i < k; i++)
+		a[start + i] = tmp[i];
+
+	free(tmp);
+}
+void merge_groups(int a[], int len, int gap)
+{
+	int i;
+	int twolen = 2 * gap;    // Á½¸öÏàÁÚµÄ×ÓÊı×éµÄ³¤¶È
+    // ½«"Ã¿2¸öÏàÁÚµÄ×ÓÊı×é" ½øĞĞºÏ²¢ÅÅĞò¡£
+	for(i = 0; i+2*gap-1 < len; i+=(2*gap))
+	{
+		merge(a, i, i+gap-1, i+2*gap-1);
+	}
+
+	 // Èô i+gap-1 < len-1£¬ÔòÊ£ÓàÒ»¸ö×ÓÊı×éÃ»ÓĞÅä¶Ô¡£
+	  // ½«¸Ã×ÓÊı×éºÏ²¢µ½ÒÑÅÅĞòµÄÊı×éÖĞ¡£
+	if ( i+gap-1 < len-1)
+	{
+		merge(a, i, i + gap - 1, len - 1);
+    }
+}
+
+void merge_sort_down2up(int a[], int len)
+{
+	int n;
+	if (a==NULL || len<=0)
+		return ;
+	for(n = 1; n < len; n*=2)
+      merge_groups(a, len, n);
+ }
