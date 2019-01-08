@@ -10,10 +10,13 @@ void HeapSort(int H[],int length);
 void merge(int a[], int start, int mid, int end);
 void merge_groups(int a[], int len, int gap);
 void merge_sort_down2up(int a[], int len);
+void quickSort(int a[],int length);
+void QSort(int a[],int low,int high);
+int partition (int a[],int low,int high);
 int main()
 {
 	int a[10]={10,5,0,7,4,9,8,32,2,6};
-	merge_sort_down2up(a,10);
+	quickSort(a,10);
 	printArray(a,10);
 
 }
@@ -208,3 +211,37 @@ void merge_sort_down2up(int a[], int len)
 	for(n = 1; n < len; n*=2)
       merge_groups(a, len, n);
  }
+void quickSort(int a[],int length)        //¿ìËÙÅÅÐòO(n*logn)
+{
+	if (a ==NULL || length<=0)
+		return;
+	QSort(a,0,length-1);
+}
+void QSort(int a[],int low,int high)
+{
+	int pivot;
+	if (a==NULL || high<=0)
+		return ;
+	if(low < high)
+	{
+		pivot = partition(a,low,high);
+
+		QSort(a,low,pivot-1);
+		QSort(a,pivot+1,high);
+	}
+}
+int partition (int a[],int low,int high)
+{
+	int pivotkey;
+	pivotkey = a[low];
+	while(low<high)
+	{
+		while(low<high&&a[high]>=pivotkey)
+			high--;
+		swap(&a[low],&a[high]);
+		while(low<high&&a[low]<=pivotkey)
+			low++;
+		swap(&a[low],&a[high]);
+	}
+	return low;
+}
