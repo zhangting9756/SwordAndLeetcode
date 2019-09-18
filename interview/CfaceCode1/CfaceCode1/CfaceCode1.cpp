@@ -5,6 +5,7 @@
 #include <string.h>
 #include <stdlib.h>
 #include  <malloc.h>
+#include "arraytest.h"
 
 void exchange(int *a,int low,int high)
 {
@@ -54,14 +55,11 @@ void makeTopK(int *source,int *dest,int K,int n)
 
 int _tmain(int argc, _TCHAR* argv[])
 {
-	int i = 0;
-	int a[10]={1,2,3,4,5,8,11,3,7,9};
-	int b[3]={0};
-	makeTopK(a,b,3,10);
-	for(i=0;i<3;i++)
-	{
-		printf("%d\n",b[i]);
-	}
+	int length = 0;
+	int a[3]={1,1,2};
+
+	length=removeDuplicates(a,3);
+
 	system("pause");
 	return 0;
 }
