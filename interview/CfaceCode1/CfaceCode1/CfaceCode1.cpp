@@ -56,9 +56,9 @@ void makeTopK(int *source,int *dest,int K,int n)
 int _tmain(int argc, _TCHAR* argv[])
 {
 	int length = 0;
-	int a[3]={1,1,2};
+	int a[6]={7,1,5,3,6,4};
 
-	length=removeDuplicates(a,3);
+	length=maxProfit(a,6);
 
 	system("pause");
 	return 0;
