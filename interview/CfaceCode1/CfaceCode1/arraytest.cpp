@@ -330,16 +330,16 @@ int removeDuplicates(int* nums, int numsSize)
 	return count;
 }
 /*买卖股票的最佳时机 II*/
-int maxProfit(int* prices, int pricesSize){
+int maxProfit(int* prices, int pricesSize)
+{
 	if(prices == NULL || pricesSize <=0)
 		return 0;
+	int i =0;
 	int maxProfit = 0;
-	int curMin    = 0;
-	for(int i = 0;i<pricesSize;i++)
+	for(i = 1;i<pricesSize;i++)
 	{
-		maxProfit = MAX(maxProfit,prices[i]-curMin);
-		curMin    = MIN(curMin,prices[i]);
+		if(prices[i]>prices[i-1])
+			maxProfit += prices[i]-prices[i-1];
 	}
 	return maxProfit;
-
 }

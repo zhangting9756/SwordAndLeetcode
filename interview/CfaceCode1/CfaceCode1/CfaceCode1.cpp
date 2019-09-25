@@ -57,7 +57,6 @@ int _tmain(int argc, _TCHAR* argv[])
 {
 	int length = 0;
 	int a[6]={7,1,5,3,6,4};
-
 	length=maxProfit(a,6);
 
 	system("pause");
