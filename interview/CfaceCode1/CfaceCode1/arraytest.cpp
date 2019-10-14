@@ -343,3 +343,61 @@ int maxProfit(int* prices, int pricesSize)
 	}
 	return maxProfit;
 }
+
+int* twoSum(int* nums, int numsSize, int target, int* returnSize)
+{
+	if(nums == NULL || numsSize <=0)
+		return NULL;
+	int front = 0;
+	int end   = numsSize - 1;
+	while(front<end)
+	{
+		if(nums[front]+nums[end] == target)
+		{	
+			returnSize[0]=front;
+			returnSize[1]=end;
+			break;
+		}
+		if(nums[front]+nums[end]>target)
+			end--;
+		else
+			front++;
+	}
+	return returnSize;
+}
+
+/*给定一个数组，将数组中的元素向右移动 k 个位置，其中 k 是非负数。*/
+void reserveArray(int*nums,int begin,int end)
+{
+	int temp =0;
+	int temp_end = end;
+	for(int i=begin;i<=(begin+end)/2;i++)
+	{
+		temp = nums[i];
+		nums[i]=nums[temp_end];
+		nums[temp_end] = temp;
+		temp_end--;
+	}
+}
+void rotate(int* nums, int numsSize, int k)
+{
+	if(nums == NULL || numsSize==0 || k == 0)
+		return;
+	reserveArray(nums,0,numsSize-k-1);
+	reserveArray(nums,numsSize-k,numsSize-1);
+	reserveArray(nums,0,numsSize-1);
+
+}
+/*给定一个非空整数数组，除了某个元素只出现一次以外，其余每个元素均出现两次。找出那个只出现了一次的元素*/
+int singleNumber(int* nums, int numsSize)
+{
+	if(nums==NULL || numsSize<=0)
+		return 0;
+	int num = nums[0];
+	for(int i=1;i<numsSize;i++)
+	{
+		num =num^nums[i];
+	}
+	return num;
+}
+

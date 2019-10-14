@@ -32,4 +32,11 @@ int getNumberOfK(int *array,int length,int k);
 int removeDuplicates(int* nums, int numsSize);
 /*买卖股票的最佳时机 II*/
 int maxProfit(int* prices, int pricesSize);
+/*给定一个整数数组 nums 和一个目标值 target，请你在该数组中找出和为目标值的那 两个 整数，并返回他们的数组下标。
+你可以假设每种输入只会对应一个答案。但是，你不能重复利用这个数组中同样的元素。*/
+int* twoSum(int* nums, int numsSize, int target, int* returnSize);
+/*给定一个数组，将数组中的元素向右移动 k 个位置，其中 k 是非负数。*/
+void rotate(int* nums, int numsSize, int k);
+/*给定一个非空整数数组，除了某个元素只出现一次以外，其余每个元素均出现两次。找出那个只出现了一次的元素*/
+int singleNumber(int* nums, int numsSize);
 #endif

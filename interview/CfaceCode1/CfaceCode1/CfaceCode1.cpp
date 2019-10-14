@@ -6,7 +6,7 @@
 #include <stdlib.h>
 #include  <malloc.h>
 #include "arraytest.h"
-
+int b_g[4]={1,2,3,4};
 void exchange(int *a,int low,int high)
 {
 	int temp = a[low];
@@ -56,8 +56,8 @@ void makeTopK(int *source,int *dest,int K,int n)
 int _tmain(int argc, _TCHAR* argv[])
 {
 	int length = 0;
-	int a[6]={7,1,5,3,6,4};
-	length=maxProfit(a,6);
+	int a[5]={1, 1, 3, 3,4};
+	int b= singleNumber(a, 5);
 
 	system("pause");
 	return 0;
