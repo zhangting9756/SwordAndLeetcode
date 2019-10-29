@@ -401,3 +401,93 @@ int singleNumber(int* nums, int numsSize)
 	return num;
 }
 
+/*给定一个由整数组成的非空数组所表示的非负整数，在该数的基础上加一。
+
+最高位数字存放在数组的首位， 数组中每个元素只存储单个数字。
+
+你可以假设除了整数 0 之外，这个整数不会以零开头。*/
+int* plusOne(int* digits, int digitsSize, int* returnSize)
+{
+	if(digits == NULL || digitsSize == 0)
+		return NULL;
+	int carry=1;
+	int i = digitsSize-1;
+	while(i>=0)
+	{
+		digits[i]=digits[i]+1;
+		if(digits[i]>9)
+		{
+			digits[i]=digits[i]-10;
+			carry = 1;
+		}
+		else
+		{
+			carry = 0;
+			break;
+		}
+		i--;
+	}
+	if(carry==1)
+	{
+		returnSize[0]=1;
+		for(i=0;i<digitsSize;i++)
+		{
+			returnSize[i+1]=digits[i];
+		}
+	}
+	else
+	{
+		for(i=0;i<digitsSize;i++)
+		{
+			returnSize[i]=digits[i];
+		}
+	}
+	return returnSize;
+}
+
+int * plusOne1(int *digits,int length) 
+{
+	int len = length - 1; 
+	for(;len>0 && digits[len]==9  ;--len)
+	{
+		digits[len]=0;
+	}
+	if (len == 0 && digits[0] == 9) 
+	{
+		digits[0] = 0;
+	}
+	else 
+	{
+		++digits[len];
+	}
+	return digits;
+}
+/*给定一个数组 nums，编写一个函数将所有 0 移动到数组的末尾，同时保持非零元素的相对顺序。*/
+void moveZeroes(int* nums, int numsSize)
+{
+	int begin=0;
+	int net = begin+1;
+	while(begin<numsSize)
+	{
+		if(nums[begin]==0)
+		{
+			while((nums[net]==0)&&(net<numsSize))
+			{
+				net++;
+			}
+			if((net==numsSize-1)&&(nums[net]==0))
+			{
+				break;
+			}
+			else
+			{
+				swap(nums,begin,net);
+				begin++;
+				net++;
+			}
+		}
+		else
+			begin++;
+	}
+}
+

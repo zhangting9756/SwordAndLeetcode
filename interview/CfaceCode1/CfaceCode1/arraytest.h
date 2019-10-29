@@ -39,4 +39,13 @@ int* twoSum(int* nums, int numsSize, int target, int* returnSize);
 void rotate(int* nums, int numsSize, int k);
 /*给定一个非空整数数组，除了某个元素只出现一次以外，其余每个元素均出现两次。找出那个只出现了一次的元素*/
 int singleNumber(int* nums, int numsSize);
+/*给定一个由整数组成的非空数组所表示的非负整数，在该数的基础上加一。
+
+最高位数字存放在数组的首位， 数组中每个元素只存储单个数字。
+
+你可以假设除了整数 0 之外，这个整数不会以零开头。*/
+int* plusOne(int* digits, int digitsSize, int* returnSize);
+int * plusOne1(int *digits,int length) ;
+/*给定一个数组 nums，编写一个函数将所有 0 移动到数组的末尾，同时保持非零元素的相对顺序。*/
+void moveZeroes(int* nums, int numsSize);
 #endif

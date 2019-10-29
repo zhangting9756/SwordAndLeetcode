@@ -65,14 +65,47 @@ class Solution6:
             if(nums2):
                 ret =[]
                 ret = [ i for i in nums1 if i in nums2 ]
-        return ret                 
-           
+        return ret  
+"""加一"""    
+class Solution7:
+    def plusOne(self, digits):
+        i=len(digits)-1
+        carry=1
+        while i>=0:
+            digits[i]=digits[i]+carry
+            if(digits[i]>9):
+                digits[i]=digits[i]-10
+                carry=1
+            else:
+                carry=0
+                break
+            i=i-1
+        if carry==1:
+            digits.insert(0,1)
+        return digits
+""" 移动零 给定一个数组 nums，编写一个函数将所有 0 移动到数组的末尾，同时保持非零元素的相对顺序。"""
+class Solution8:
+    def moveZeroes(self, nums):
+        """
+        for i in nums:
+            if i==0:
+                nums.remove(i)
+                nums.append(i)
+        """
+        count, length  = 0, len(nums)
+        while count != length:
+            if nums[count] == 0:
+                del nums[count]
+                nums.append(0)
+                count -= 1
+                length -= 1
+            count += 1
+               
 if __name__ == '__main__':
-    a=[1,3,2,4,5,3]
-    b=[2,3,7,8,3]
-    c=Solution6()
-    d=c.intersect(a,b)
-    print(d)
+    a=[9,0,2,1,0,3,4,0]
+    c=Solution8()
+    c.moveZeroes(a)
+    print(a)
     
     
  

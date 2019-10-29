@@ -6,7 +6,7 @@
 #include <stdlib.h>
 #include  <malloc.h>
 #include "arraytest.h"
-int b_g[4]={1,2,3,4};
+int b_g[6]={0,0,3,4,0,7};
 void exchange(int *a,int low,int high)
 {
 	int temp = a[low];
@@ -56,9 +56,9 @@ void makeTopK(int *source,int *dest,int K,int n)
 int _tmain(int argc, _TCHAR* argv[])
 {
 	int length = 0;
-	int a[5]={1, 1, 3, 3,4};
-	int b= singleNumber(a, 5);
-
+	int a[5]={1, 1, 1, 4,5};
+	int b[6] = {0};
+	moveZeroes(b_g, 6);
 	system("pause");
 	return 0;
 }
