@@ -1,10 +1,11 @@
 #include<stdio.h>
 #include<malloc.h>
 
-#include "quickSort.h"
+#include "sort.h"
+
 
 /*快排*/
-
+/*数组两元素交换*/
 void swap(int *a,int low,int high)
 {
 	int temp = a[low];
@@ -12,6 +13,8 @@ void swap(int *a,int low,int high)
 	a[high]=temp;
 }
 
+
+/*快排*/
 int partition(int *a, int low, int high)
 {
 	int pivot = a[low];

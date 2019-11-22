@@ -1,8 +1,9 @@
 #include <stdio.h>
-#include "quickSort.h"
 
+
+#include "sort.h"
 #include "heapSort.h"
-#include "arraytest.h"
+#include "array.h"
 
 
 void getLeastNumber(int *input, int *output, int length,int k)

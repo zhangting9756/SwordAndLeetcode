@@ -1,5 +1,7 @@
 #include<stdio.h>
 #include<string.h>
+
+
 #include "strToInt.h"
 
 bool checkStrInt(char c)

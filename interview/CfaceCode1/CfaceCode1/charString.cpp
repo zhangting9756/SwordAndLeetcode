@@ -1,21 +1,21 @@
-//#include "stdafx.h"
-//#include <string.h>
-//#include <stdlib.h>
-//#include "zt1.h"
 
 #include<stdio.h>
 #include<string.h>
 #include "stdafx.h"
 #include <stdlib.h>
 #include  <malloc.h>
-#include "huiWen.h"
 
+
+#include "charString.h"
+
+/*交换两个字符*/
 void swapChar(char *s,int low,int high)
 {
 	char temp = s[low];
 	s[low]=s[high];
 	s[high]=temp;
 }
+/*检验是否为回文字符串*/
 int reserveCheck(char *s,int length)
 {
 	int high = length-1;
@@ -27,14 +27,13 @@ int reserveCheck(char *s,int length)
 	}
 	while (low <= high)
 	{
-		printf("s[%d]:%c s[%d]:%c\n", low, s[low], high, s[high]);
 		if (s[low++] != s[high--])
 			return 0;
 	}
 	return 1;
 
 }
-
+/*翻转字符串*/
 void reserve(char *s, int from,int end)
 {
 	if (NULL == s || 0 >(end - from))
@@ -45,7 +44,6 @@ void reserve(char *s, int from,int end)
 	while (from <= end)
 	{
 		char c =  s[from];
-		printf("a[%d] is:%c a[%d] is:%c", from, s[from], end, s[end]);
 		s[from] = s[end];
 		s [end] = c;
 		from++;
@@ -54,6 +52,11 @@ void reserve(char *s, int from,int end)
 	return;
 }
 
+/*翻转单词顺序 剑指offer42
+输入一个英文句子，翻转句子中单词的顺序，但单词内字符的顺序不变。为简单起见，标点符号和普通字母一样处理。
+eg：“I am a student.”输出“student. a am I”
+左旋也可以使用
+*/
 void reserveString(char *s)
 {
 	int i = 0;
@@ -61,17 +64,32 @@ void reserveString(char *s)
 	int end = 0;
 	int length = strlen(s);
 	reserve(s,0,length-1);
-	for(i=0;i<length;i++)
+	char *pBegin = s;
+	char *pEnd = s;
+	while(*pBegin != '\0')
 	{
-		if(s[i]==' '||(i == length-1))
+		if(*pBegin == ' ')
 		{
-			end = i-1;
-			reserve(s,start,end);
-			start = i+1;
+			pBegin++;
+			pEnd++;
+			start++;
+			end++;
+		}
+		else if((*pEnd == ' ')||(*pEnd == '\0'))
+		{
+			reserve(s,start,--end);
+			pBegin = pEnd;
+			start = ++end;
+		}
+		else
+		{
+			*pEnd++;
+			end++;
 		}
 	}
 }
 
+/*找出最大回文字符串*/
 int maxHuiWen(char *s,int length)
 {
 	int i,j;

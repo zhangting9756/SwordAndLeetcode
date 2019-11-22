@@ -1,5 +1,7 @@
 #include <stdio.h>
 #include <string.h>
+
+/*二进制中1的个数*/
 int countOneInNumber(int num)
 {
 	int count = 0;
@@ -11,7 +13,7 @@ int countOneInNumber(int num)
 	}
 	return count;
 }
-
+/*第一个只出现一次的字符*/
 char findFirstOneChar(char *s)
 {
 	if(NULL == s)
@@ -27,7 +29,6 @@ char findFirstOneChar(char *s)
 	}
 	while(*pString!='\0')
 	{
-		printf("%c\n",*pString);
 		hashTable[*(pString)]++;
 		pString++;
 	}

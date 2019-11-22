@@ -1,12 +1,23 @@
 // CfaceCode1.cpp : 定义控制台应用程序的入口点。
 //
-
+/***************************
+*头文件
+****************************/
 #include "stdafx.h"
 #include <string.h>
 #include <stdlib.h>
 #include  <malloc.h>
-#include "arraytest.h"
+
+
+#include "array.h"
+#include "charString.h"
+
+/***************************
+*全局变量
+****************************/
 int b_g[6]={0,0,3,4,0,7};
+
+
 void exchange(int *a,int low,int high)
 {
 	int temp = a[low];
@@ -58,7 +69,8 @@ int _tmain(int argc, _TCHAR* argv[])
 	int length = 0;
 	int a[5]={1, 1, 1, 4,5};
 	int b[6] = {0};
-	moveZeroes(b_g, 6);
+	char c[] = "I am a student.";
+	reserveString(c);
 	system("pause");
 	return 0;
 }

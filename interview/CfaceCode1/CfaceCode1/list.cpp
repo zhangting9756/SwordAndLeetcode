@@ -1,8 +1,10 @@
 #include<stdio.h>
 #include<string.h>
 #include<malloc.h>
+
+
 #include "list.h"
-#include "quickSort.h"
+#include "sort.h"
 
 
 void reserveList(pList headList)
