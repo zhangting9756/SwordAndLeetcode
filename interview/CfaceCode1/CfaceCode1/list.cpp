@@ -6,7 +6,9 @@
 #include "list.h"
 #include "sort.h"
 
-
+/*
+逆序输出链表
+*/
 void reserveList(pList headList)
 {
 	if(NULL == headList)
@@ -49,7 +51,7 @@ pList creatList()
 	return headList;
 
 }
-/*
+/*找出数组中长度超过数组长度一半的数字，代码不对，再修改
 int moreThanHalfNum(int *array,int length)
 {
 	if(NULL == array)
