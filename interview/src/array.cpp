@@ -2,7 +2,6 @@
 
 
 #include "sort.h"
-#include "heapSort.h"
 #include "array.h"
 
 
