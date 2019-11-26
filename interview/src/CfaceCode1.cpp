@@ -11,11 +11,12 @@
 
 #include "array.h"
 #include "charString.h"
+#include "sort.h"
 
 /***************************
 *全局变量
 ****************************/
-int b_g[6]={0,0,3,4,0,7};
+int b_g[5]={3, 8, 2, 4,5};
 
 
 void exchange(int *a,int low,int high)
@@ -67,10 +68,10 @@ void makeTopK(int *source,int *dest,int K,int n)
 int _tmain(int argc, _TCHAR* argv[])
 {
 	int length = 0;
-	int a[5]={1, 1, 1, 4,5};
+	int a[5]={3, 8, 2, 4,5};
 	int b[6] = {0};
 	char c[] = "I am a student.";
-	reserveString(c);
+	simpleSelectSort(b_g,5);
 	system("pause");
 	return 0;
 }
