@@ -55,7 +55,10 @@ void reserve(char *s, int from,int end)
 /*翻转单词顺序 剑指offer42
 输入一个英文句子，翻转句子中单词的顺序，但单词内字符的顺序不变。为简单起见，标点符号和普通字母一样处理。
 eg：“I am a student.”输出“student. a am I”
-左旋也可以使用
+左旋也可以使用,
+给定一个字符串，要求把字符串前面的若干个字符移动到字符串的尾部，
+如把字符串“abcdef”前面的2个字符'a'和'b'移动到字符串的尾部，使得原字符串变成字符串“cdefab”。
+请写一个函数完成此功能，要求对长度为n的字符串操作的时间复杂度为 O(n)，空间复杂度为 O(1)。
 */
 void reserveString(char *s)
 {
@@ -136,7 +139,10 @@ void calcAllPermutation(char *s,int from,int to)
 	}
 }
 
-
+/*
+给定两个分别由字母组成的字符串A和字符串B，字符串B的长度比字符串A短。
+请问，如何最快地判断字符串B中所有字母是否都在字符串A里？
+*/
 
 bool stringContain(char *a, char *b)
 {

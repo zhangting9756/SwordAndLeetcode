@@ -71,7 +71,13 @@ int _tmain(int argc, _TCHAR* argv[])
 	int a[5]={3, 8, 2, 4,5};
 	int b[6] = {0};
 	char c[] = "I am a student.";
-	simpleSelectSort(b_g,5);
+	char s[100];
+	gets_s(s);
+	puts(s);
+	length = strlen(s);
+	reserve(s,0,length-1);
+
+	//simpleSelectSort(b_g,5);
 	system("pause");
 	return 0;
 }
