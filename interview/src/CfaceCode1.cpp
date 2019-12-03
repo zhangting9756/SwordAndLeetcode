@@ -67,17 +67,11 @@ void makeTopK(int *source,int *dest,int K,int n)
 
 int _tmain(int argc, _TCHAR* argv[])
 {
-	int length = 0;
+	int length = 5;
 	int a[5]={3, 8, 2, 4,5};
-	int b[6] = {0};
-	char c[] = "Im am a5 student";
-	char s[1000];
-	//gets_s(s);
-	//puts(s);
-	//length = strlen(s);
-	reserveString1(c);
-
-	//simpleSelectSort(b_g,5);
+	//int b[6] = {0};
+	char c[] = "0P";
+	length = isPalindrome(c);
 	system("pause");
 	return 0;
 }

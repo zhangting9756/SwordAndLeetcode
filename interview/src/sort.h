@@ -1,6 +1,6 @@
 #ifndef __QUICK_SORT_TEST__
 #define __QUICK_SORT_TEST__
-//冒泡
+/*冒泡*/;
 void bubleAsceningSort(int *array,int length);
 //简单选择，跟冒泡差不多，但是交换次数少
 void simpleSelectSort(int *array,int length);

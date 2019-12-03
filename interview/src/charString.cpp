@@ -8,7 +8,7 @@
 
 #include "charString.h"
 
-/*交换两个字符*/
+/*交换两个字符*/;
 void swapChar(char *s,int low,int high)
 {
 	char temp = s[low];
@@ -24,6 +24,10 @@ bool checkChar(char c)
 		return 1;
 	else
 		return 0;
+}
+bool checkNum(char c)
+{
+	return (c>='0'&&c<='9');
 }
 
 /*检验是否为回文字符串*/
@@ -224,4 +228,46 @@ void reserveString1(char *s)
 		}
 	}
 	dest[j]='\0';
+}
+
+/*验证回文字符串,给定一个字符串，验证它是否是回文串，只考虑字母和数字字符，可以忽略字母的大小写。leetcode 字符串*/
+bool isPalindrome(char *s)
+{
+	char *pBegin=s;
+	char *pEnd = s;
+	while(*pEnd!='\0')
+		pEnd++;
+	pEnd--;
+	while(pBegin<pEnd)
+	{
+		if(!(checkChar(*pBegin)||checkNum(*pBegin)))
+		{
+			pBegin++;
+			continue;
+		}
+		if(!(checkChar(*pEnd)||checkNum(*pEnd)))
+		{
+			pEnd--;
+			continue;
+		}
+		if(('A'<=*pBegin)&&(*pBegin<='Z'))
+		{
+			*pBegin = *pBegin + 32;
+		}
+		if(('A'<=*pEnd)&&(*pEnd<='Z'))
+		{
+			*pEnd = *pEnd + 32;
+		}
+		if(*pBegin == *pEnd)
+		{
+			pBegin++;
+			pEnd--;
+			continue;
+		}
+		else
+		{
+			return 0;
+		}
+	}
+	return 1;
 }
