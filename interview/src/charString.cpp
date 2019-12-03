@@ -15,6 +15,17 @@ void swapChar(char *s,int low,int high)
 	s[low]=s[high];
 	s[high]=temp;
 }
+
+bool checkChar(char c)
+{
+	if(('a'<=c)&&(c<='z'))
+		return 1;
+	else if(('A'<=c)&&(c<='Z'))
+		return 1;
+	else
+		return 0;
+}
+
 /*检验是否为回文字符串*/
 int reserveCheck(char *s,int length)
 {
@@ -160,4 +171,57 @@ bool stringContain(char *a, char *b)
 			return false;
 	}
 	return true;
+}
+
+/*对字符串中的所有单词进行倒排。
+
+说明：
+
+1、每个单词是以26个大写或小写英文字母构成；
+
+2、非构成单词的字符均视为单词间隔符；
+
+3、要求倒排后的单词间隔符以一个空格表示；如果原字符串中相邻单词间有多个间隔符时，倒排转换后也只允许出现一个空格间隔符；
+
+4、每个单词最长20个字母；*/
+
+void reserveString1(char *s)
+{
+	if(NULL == s )
+		return;
+	int from=0;
+	int end = 0;
+	int i =0;
+	int j = 0;
+	int length = strlen(s);
+	reserve(s,0,length-1);
+	char dest[1000];
+	for(i=0;i<length;i++)
+	{
+		if(checkChar(s[i]))
+		{
+			dest[j++]=s[i];
+			if(i == length-1)
+				reserve(dest,from,i);
+		}
+		else
+		{
+			if(i==0)
+			{
+				dest[0]=' ';
+				j++;
+			}
+			if(dest[j-1]==' ')
+			{
+				continue;
+			}
+			end = j-1;
+			reserve(dest,from,end);
+			dest[j]=' ';
+			j++;
+			from = j;
+			end = j;
+		}
+	}
+	dest[j]='\0';
 }

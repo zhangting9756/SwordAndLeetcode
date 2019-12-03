@@ -12,3 +12,5 @@ void swapChar(char *s,int low,int high);
 void calcAllPermutation(char *s,int from,int to);
 /*×Ö·û´®°üº¬*/
 bool stringContain(char *a, char *b);
+
+void reserveString1(char *s);
