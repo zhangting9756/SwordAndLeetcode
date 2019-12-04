@@ -271,3 +271,35 @@ bool isPalindrome(char *s)
 	}
 	return 1;
 }
+
+/*给定一个字符串，找到它的第一个不重复的字符，并返回它的索引。如果不存在，则返回 -1。
+注意标志位的使用*/
+
+int firstUniqChar(char *s)
+{
+	
+	if (s==NULL)
+		return -1;
+	int length = strlen(s);
+	if(length == 1)
+		return 0;
+	int i = 0;
+	int j = 0;
+	int flag = 0;
+	for(i=0;i<length;i++)
+	{
+		flag = 0;
+		for(j=0;j<length;j++)
+		{
+			if(s[i]==s[j]&&j!=i)
+			{	
+				flag = 1;
+				break;
+			}
+			
+		}
+		if(flag==0)
+			return i;
+	}
+	return -1;
+}

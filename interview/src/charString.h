@@ -26,3 +26,5 @@ bool stringContain(char *a, char *b);
 void reserveString1(char *s);
 /*验证回文字符串,给定一个字符串，验证它是否是回文串，只考虑字母和数字字符，可以忽略字母的大小写。leetcode 字符串*/
 bool isPalindrome(char *s);
+/*给定一个字符串，找到它的第一个不重复的字符，并返回它的索引。如果不存在，则返回 -1。*/
+int firstUniqChar(char * s);

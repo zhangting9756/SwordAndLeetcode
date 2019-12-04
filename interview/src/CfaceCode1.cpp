@@ -70,8 +70,8 @@ int _tmain(int argc, _TCHAR* argv[])
 	int length = 5;
 	int a[5]={3, 8, 2, 4,5};
 	//int b[6] = {0};
-	char c[] = "0P";
-	length = isPalindrome(c);
+	char c[] = "aadadaade";
+	length = firstUniqChar(c);
 	system("pause");
 	return 0;
 }
