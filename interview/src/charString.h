@@ -28,3 +28,6 @@ void reserveString1(char *s);
 bool isPalindrome(char *s);
 /*给定一个字符串，找到它的第一个不重复的字符，并返回它的索引。如果不存在，则返回 -1。*/
 int firstUniqChar(char * s);
+/*整数反转
+给出一个 32 位的有符号整数，你需要将这个整数中每位上的数字进行反转*/
+int reverse(int x);

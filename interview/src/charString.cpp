@@ -7,6 +7,7 @@
 
 
 #include "charString.h"
+#include "strToInt.h"
 
 /*交换两个字符*/;
 void swapChar(char *s,int low,int high)
@@ -302,4 +303,64 @@ int firstUniqChar(char *s)
 			return i;
 	}
 	return -1;
+}
+
+/*整数反转
+给出一个 32 位的有符号整数，你需要将这个整数中每位上的数字进行反转*/
+bool checkNumMax(int num, int c)
+{
+	if ((num <= MAX_NUM / 10) && ((MAX_NUM - num * 10) >= c))
+		return TRUE;
+	else
+		return FALSE;
+}
+
+bool checkNumMin(int num, int c)
+{
+	if ((num >= int(MIN_NUM) / 10) && ((MIN_NUM - num * 10) <= c))
+		return TRUE;
+	else
+		return FALSE;
+}
+int reverse(int x)
+{
+	int s = x;
+	int flag = 0;
+	int num = 0;
+	if (x < 0)
+	{
+		flag = 1;
+	}
+	if (flag)
+	{
+		while (s)
+		{
+			if (checkNumMin(num, s % 10))
+			{
+				num = num * 10 + s % 10;
+				s = s / 10;
+			}
+			else
+			{
+				return 0;
+			}
+			
+		}
+		
+	}
+	else
+	{
+		while (s)
+		{
+			if (checkNumMax(num, s % 10))
+			{
+				num = num * 10 + s % 10;
+				s = s / 10;
+			}
+			else
+				return 0;
+			
+		}
+	}
+	return num;
 }
