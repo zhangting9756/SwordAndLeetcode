@@ -366,7 +366,8 @@ int reverse(int x)
 }
 
 /*有效的字母异位词,给定两个字符串 s 和 t ，编写一个函数来判断 t 是否是 s 的字母异位词。leetcode*/
-bool isAnagram(char * s, char * t){
+bool isAnagram(char * s, char * t)
+{
 	int i,num1[123]={0};
 	int num2[123]={0};
 	int s_len,t_len;
@@ -385,5 +386,62 @@ bool isAnagram(char * s, char * t){
 	}
 
 	return true;
+
+}
+/*字符串转换整数 (atoi)leetcode*/
+bool checkFirstChar(char c)
+{
+	if(c == '-')
+		return true;
+	if(c == '+')
+		return true;
+	if('0'<=c && c<='9')
+		return true;
+	return false;
+}
+int myAtoi(char * str)
+{
+	if(str == NULL)
+		return 0;
+	int flag = 0;
+	long int num = 0;
+	while(*str != '\0')
+	{
+		/*找到第一个非空字符*/
+		if(*str!=' ')
+		{
+			if(checkFirstChar(*str))
+			{
+				if(*str == '-')
+					flag = 1;
+				break;
+			}
+			else
+				return 0;
+		}
+		else
+		{
+			str++;
+		}
+		
+	}
+	while(*str != '\0')
+	{
+		if(flag==1)
+		{
+			if(checkNum(*str))
+				num = num*10 - (*str - '0');
+		}
+		else
+		{
+			if(checkNum(*str))
+				num = num*10 + (*str - '0');
+		}
+		str++;
+	}
+	if(num>2147483642||num<(-2147483641))
+		return 0;
+	else 
+		return num;
 
 }

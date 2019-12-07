@@ -32,4 +32,6 @@ int firstUniqChar(char * s);
 给出一个 32 位的有符号整数，你需要将这个整数中每位上的数字进行反转*/
 int reverse(int x);
 /*有效的字母异位词,给定两个字符串 s 和 t ，编写一个函数来判断 t 是否是 s 的字母异位词。leetcode*/
-bool isAnagram(char * s, char * t)
+bool isAnagram(char * s, char * t);
+/*字符串转换整数 (atoi)leetcode*/
+int myAtoi(char * str);

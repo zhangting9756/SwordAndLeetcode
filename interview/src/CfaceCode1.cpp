@@ -12,6 +12,7 @@
 #include "array.h"
 #include "charString.h"
 #include "sort.h"
+#include "strToInt.h"
 
 /***************************
 *全局变量
@@ -72,7 +73,9 @@ int _tmain(int argc, _TCHAR* argv[])
 	//int a[5]={3, 8, 2, 4,5};
 	//int b[6] = {0};
 	//char c[] = "aadadaade";
-	length = reverse(a);
+	//length = reverse(a);
+	printf("32 bit maxnum is:%d\n",MAX_NUM);
+	printf("32 bit minnum is:%d",MIN_NUM);
 	system("pause");
 	return 0;
 }
