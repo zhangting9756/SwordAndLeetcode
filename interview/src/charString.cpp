@@ -364,3 +364,26 @@ int reverse(int x)
 	}
 	return num;
 }
+
+/*有效的字母异位词,给定两个字符串 s 和 t ，编写一个函数来判断 t 是否是 s 的字母异位词。leetcode*/
+bool isAnagram(char * s, char * t){
+	int i,num1[123]={0};
+	int num2[123]={0};
+	int s_len,t_len;
+	s_len=strlen(s);
+	t_len=strlen(t);
+	if(s_len!=t_len) return false;
+
+	for(i=0;i<s_len;i++)
+	{    
+		num1[(int)s[i]]++;
+		num2[(int)t[i]]++;        
+	}
+	for(i=97;i<123;i++)
+	{
+		if(num1[i]!=num2[i]) return false;
+	}
+
+	return true;
+
+}
