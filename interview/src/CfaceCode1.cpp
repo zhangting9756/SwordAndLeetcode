@@ -68,14 +68,13 @@ void makeTopK(int *source,int *dest,int K,int n)
 
 int _tmain(int argc, _TCHAR* argv[])
 {
-	int length = 0;
+	int length = 5;
 	int a = -123;
 	//int a[5]={3, 8, 2, 4,5};
 	//int b[6] = {0};
-	//char c[] = "aadadaade";
+	char c[] = "42";
 	//length = reverse(a);
-	printf("32 bit maxnum is:%d\n",MAX_NUM);
-	printf("32 bit minnum is:%d",MIN_NUM);
+	length = myAtoi(c);
 	system("pause");
 	return 0;
 }

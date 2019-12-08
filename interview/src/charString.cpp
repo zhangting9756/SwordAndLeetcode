@@ -317,7 +317,7 @@ bool checkNumMax(int num, int c)
 
 bool checkNumMin(int num, int c)
 {
-	if ((num >= int(MIN_NUM) / 10) && ((MIN_NUM - num * 10) <= c))
+	if ((num >= int(MIN_NUM) / 10) && (int(MIN_NUM - num * 10) <= c))
 		return TRUE;
 	else
 		return FALSE;
@@ -404,7 +404,7 @@ int myAtoi(char * str)
 	if(str == NULL)
 		return 0;
 	int flag = 0;
-	long int num = 0;
+	int num = 0;
 	while(*str != '\0')
 	{
 		/*找到第一个非空字符*/
@@ -429,19 +429,34 @@ int myAtoi(char * str)
 	{
 		if(flag==1)
 		{
-			if(checkNum(*str))
-				num = num*10 - (*str - '0');
+			if (checkNum(*str))
+			{
+				if (checkMin(num, *str))
+				{
+					num = num * 10 - (*str - '0');
+				}
+				else
+				{
+					return MIN_NUM;
+				}
+			}
 		}
 		else
 		{
-			if(checkNum(*str))
-				num = num*10 + (*str - '0');
+			if (checkNum(*str))
+			{
+				if (checkMax(num, *str))
+				{
+					num = num * 10 + (*str - '0');
+				}
+				else
+				{
+					return MAX_NUM;
+				}
+			}
+				
 		}
 		str++;
 	}
-	if(num>2147483642||num<(-2147483641))
-		return 0;
-	else 
-		return num;
-
+	return num;
 }
