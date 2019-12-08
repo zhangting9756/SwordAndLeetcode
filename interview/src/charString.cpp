@@ -403,7 +403,7 @@ int myAtoi(char * str)
 {
 	if(str == NULL)
 		return 0;
-	int flag = 0;
+	int flag = 1;
 	int num = 0;
 	while(*str != '\0')
 	{
@@ -413,7 +413,11 @@ int myAtoi(char * str)
 			if(checkFirstChar(*str))
 			{
 				if(*str == '-')
+					flag = -1;
+				else if(*str == '-')
 					flag = 1;
+				else
+					num = *str -'0';
 				break;
 			}
 			else
@@ -425,38 +429,13 @@ int myAtoi(char * str)
 		}
 		
 	}
-	while(*str != '\0')
+	while(*str++ != '\0'&&(checkStrInt(*str)))
 	{
-		if(flag==1)
+		if(checkMax(num,*str))
 		{
-			if (checkNum(*str))
-			{
-				if (checkMin(num, *str))
-				{
-					num = num * 10 - (*str - '0');
-				}
-				else
-				{
-					return MIN_NUM;
-				}
-			}
+			return (flag == 1) ?MAX_NUM : MIN_NUM;
 		}
-		else
-		{
-			if (checkNum(*str))
-			{
-				if (checkMax(num, *str))
-				{
-					num = num * 10 + (*str - '0');
-				}
-				else
-				{
-					return MAX_NUM;
-				}
-			}
-				
-		}
-		str++;
+		num = 10 * num + (*str - '0');
 	}
-	return num;
+	return num*flag;
 }

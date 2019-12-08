@@ -14,7 +14,7 @@ bool checkStrInt(char c)
 
 bool checkMax(int num, char c)
 {
-	if((num <= MAX_NUM/10) && ((MAX_NUM - num *10) >= (c - '0')))
+	if((num > MAX_NUM / 10) || (num == MAX_NUM / 10 && (c - '0') > 7))
 		return TRUE;
 	else
 		return FALSE;
@@ -22,10 +22,6 @@ bool checkMax(int num, char c)
 
 bool checkMin(int num, char c)
 {
-	int m = MIN_NUM;
-	int n = int(MIN_NUM)/10;
-	int x = MIN_NUM - num *10;
-	int y = -(c - '0');
 	if((num >= int(MIN_NUM)/10) && ((MIN_NUM - num *10) <= (-(c - '0'))))
 		return TRUE;
 	else
@@ -36,7 +32,7 @@ int strToInt(char *str)
 {
 	if((NULL == str)||('\0' == *str))
 		return FALSE;
-	int flag = 0;
+	int flag = 1;
 	int num = 0;
 	int length = strlen(str);
 	if('-' == *str)
@@ -48,31 +44,14 @@ int strToInt(char *str)
 	{
 		if(checkStrInt(*str))
 		{
-			if(flag)         //字符串里的数字是负数
+			if(checkMax(num,*str))
 			{
-				if(checkMin(num,*str))
-				{
-					num = num*10 - (*str - '0');
-				}
-				else
-				{
-					return FALSE;
-				}
+				return (flag == 1) ?MAX_NUM : MIN_NUM;
 			}
-			else
-			{
-				if(checkMax(num,*str))
-				{
-					num = num*10 + (*str - '0');
-				}
-				else
-				{
-					return FALSE;
-				}
-			}
+			num = 10 * num + (*str - '0');
 		}
 		str++;
 	}
-	return num;
+	return num*flag;
 }
 
