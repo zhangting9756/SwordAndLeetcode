@@ -439,3 +439,30 @@ int myAtoi(char * str)
 	}
 	return num*flag;
 }
+/*实现 strStr()
+给定一个 haystack 字符串和一个 needle 字符串，在 haystack 字符串中找出 needle 字符串出现的第一个位置 (从0开始)。如果不存在，则返回  -1。*/
+int strStr(char * haystack, char * needle)
+{
+	if(haystack==NULL || needle == NULL)
+		return -1;
+	int length1=strlen(haystack);
+	int length2=strlen(needle);
+	if(length2>length1)
+		return -1;
+	int i=0;
+	int j=0;
+	int flag = 0;
+	for(i=0;i<length1;i++)
+	{
+		if(haystack[i]!=needle[j])
+			continue;
+		else
+			i++;
+			flag=i;
+			for(j=1;j<length2;j++)
+			{
+				if(haystack[flag++]!=needle[j])
+					break;
+			}
+	}
+}
