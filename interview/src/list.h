@@ -6,5 +6,4 @@ typedef struct NODE{
 
 void reserveList(pList headList);
 pList creatList();
-int moreThanHalfNum(int *array,int length);
-int moreThanHalfNumber1(int *array,int length);
+int moreThanHalfNumber(int *array,int length);

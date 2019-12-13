@@ -52,29 +52,8 @@ pList creatList()
 
 }
 /*找出数组中长度超过数组长度一半的数字，代码不对，再修改
-int moreThanHalfNum(int *array,int length)
-{
-	if(NULL == array)
-	{
-		printf("the array is null!\n");
-		return 0;
-	}
-	int middle = length/2;
-	int start = 0;
-	int end = length-1;
-	int index = 0;
-	while(index!=middle)
-	{
-		index = partition(array,start,end);
-		if(index>middle)
-			end = index -1;
-		else
-			start = index + 1;
-	}
-	return array[middle];
-}
 */
-int moreThanHalfNumber1(int *array,int length)
+int moreThanHalfNumber(int *array,int length)
 {
 	int count = 1;
 	int number = array[0];

@@ -35,3 +35,8 @@ int reverse(int x);
 bool isAnagram(char * s, char * t);
 /*字符串转换整数 (atoi)leetcode*/
 int myAtoi(char * str);
+/*实现 strStr()
+给定一个 haystack 字符串和一个 needle 字符串，在 haystack 字符串中找出 needle 字符串出现的第一个位置 (从0开始)。如果不存在，则返回  -1。*/
+int strStr(char * haystack, char * needle);
+/*最长公共前缀*/
+char *longestCommonPrefix(char ** strs, int strsSize);

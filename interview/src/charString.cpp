@@ -447,22 +447,59 @@ int strStr(char * haystack, char * needle)
 		return -1;
 	int length1=strlen(haystack);
 	int length2=strlen(needle);
+	if (length1 == 0 && length2 > 0)
+		return -1;
+	if(length2 == 0 )
+		return 0;
 	if(length2>length1)
 		return -1;
 	int i=0;
 	int j=0;
+	int m = 0;
 	int flag = 0;
 	for(i=0;i<length1;i++)
 	{
+		j = 0;
 		if(haystack[i]!=needle[j])
+		{
 			continue;
+		}
 		else
-			i++;
-			flag=i;
-			for(j=1;j<length2;j++)
+		{
+			m=i;
+			if((length1-m+1)<length2)
+				return -1;
+			for(j=0;j<length2 && m<length1;j++,m++)
 			{
-				if(haystack[flag++]!=needle[j])
+				if(haystack[m]!=needle[j])
 					break;
 			}
+			if(j==length2 && m==i+length2)
+				return i;
+		}
 	}
+	return -1;
+}
+
+/*最长公共前缀*/
+char *longestCommonPrefix(char ** strs, int strsSize)
+{
+	int length = strlen(strs[0]);
+
+	//char *str = strs[0];//利用第一个来判断
+
+	//char *str = (char *)malloc(sizeof(char)*length);//利用第一个来判断   这里str一定要自己分配，否则改变不了str里的值，因为是在静态区分配的
+	char str[5000];
+	int m =0;
+	for(m =0;m<length;m++)
+		str[m]=strs[0][m];
+	str[m]='\0';
+	int i,j;
+	if(strsSize == 0) return "";
+	for(i = 1; i<strsSize;i++){
+		j = 0;
+		while(str[j]&&strs[i][j]&&str[j]==strs[i][j])j++;//避免数组溢出并判断下一个元素是否相同
+		str[j] ='\0';//字符串结束符只输出前面对应相同的
+	}
+	return str;
 }

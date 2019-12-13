@@ -72,9 +72,10 @@ int _tmain(int argc, _TCHAR* argv[])
 	int a = -123;
 	//int a[5]={3, 8, 2, 4,5};
 	//int b[6] = {0};
-	char c[] = "42";
+	char *c[] = {"flower","flow","flight"};
+	char *b={0};
 	//length = reverse(a);
-	length = myAtoi(c);
+	b = longestCommonPrefix(c,3);
 	system("pause");
 	return 0;
 }
