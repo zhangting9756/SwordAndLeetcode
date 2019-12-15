@@ -6,4 +6,3 @@ typedef struct NODE{
 
 void reserveList(pList headList);
 pList creatList();
-int moreThanHalfNumber(int *array,int length);

@@ -4,7 +4,7 @@
 #include "sort.h"
 #include "array.h"
 
-
+/*×îĞ¡µÄK¸öÊı£¬²ÉÓÃ¿ìÅÅµÄË¼Ïë*/
 void getLeastNumber(int *input, int *output, int length,int k)
 {
 	int i =0;
@@ -25,7 +25,7 @@ void getLeastNumber(int *input, int *output, int length,int k)
 	}
 
 }
-
+/*×îĞ¡µÄK¸öÊı£¬²ÉÓÃ¶ÑÅÅµÄË¼Ïë*/
 void getLeastNumbers(int *input, int *output, int length,int k)
 {
 	int i = 0;
@@ -45,6 +45,9 @@ void getLeastNumbers(int *input, int *output, int length,int k)
 	}
 }
 
+/*Ñ°ÕÒºÍÎª¶¨ÖµµÄÁ½¸öÊı
+ÊäÈëÒ»¸öÊı×éºÍÒ»¸öÊı×Ö£¬ÔÚÊı×éÖĞ²éÕÒÁ½¸öÊı£¬Ê¹µÃËüÃÇµÄºÍÕıºÃÊÇÊäÈëµÄÄÇ¸öÊı×Ö¡£
+*/
 bool findNumberWithSum(int *array,int *num1,int *num2,int length,int sum)
 {
 	int start = 0;
@@ -71,6 +74,7 @@ bool findNumberWithSum(int *array,int *num1,int *num2,int length,int sum)
 	}
 	return false;
 }
+/*Ñ°ÕÒºÍÎª¶¨ÖµµÄ¶à¸öÊı*/
 void printContinueSequence(int start,int end)
 {
 	int i;
@@ -108,13 +112,15 @@ void findContunieSequence(int num)
 	}
 
 }
-
+/*ÇàÍÜÌøÌ¨½×*/
 int faBonacci(int num)
 {
 	if(num <= 0)
 		return 0;
 	if(num == 1)
 		return 1;
+	if(num == 2)
+		return 2;
 	else
 	{
 		return faBonacci(num-1)+faBonacci(num-2);
@@ -123,8 +129,8 @@ int faBonacci(int num)
 
 int faBonacci1(int num)
 {
-	int minNum=0;
-	int maxNum=1;
+	int minNum=1;   //Ò»¸öÌ¨½×Ê±µÄ·½·¨Êı
+	int maxNum=2;   //Á½¸öÌ¨½×µÄ·½·¨Êı
 	int fibN=0;
 	int i=2;
 	if(num ==0)
@@ -142,6 +148,7 @@ int faBonacci1(int num)
 	}
 	return fibN;
 }
+/*µ÷ÕûÊı×éË³ĞòÊ¹ÆæÊıÎ»ÓÚÅ¼ÊıÇ°Ãæ£¬½£Ö¸offer ÃæÊÔÌâ14*/
 bool oddEven(int num)
 {
 	if(num%2 == 1)
@@ -163,7 +170,8 @@ void reOderOddEven(int *array,int length)
 		swap(array,start,end);
 	}
 }
-
+/*ºì°×À¶Çò£¬ÏÖÓĞn¸öºì°×À¶ÈıÖÖ²»Í¬ÑÕÉ«µÄĞ¡Çò£¬ÂÒĞòÅÅÁĞÔÚÒ»Æğ£¬ÇëÍ¨¹ıÁ½Á½½»»»ÈÎÒâÁ½¸öÇò£¬Ê¹µÃ´Ó×óÖÁÓÒ£¬ÒÀ´ÎÊÇÒ»Ğ©ºìÇò¡¢Ò»Ğ©°×Çò¡¢Ò»Ğ©À¶Çò¡£
+*/
 void sortRedWhiteBlue(int *array,int length)
 {
 	int start = 0;
@@ -190,7 +198,7 @@ void sortRedWhiteBlue(int *array,int length)
 }
 
 
-
+/*¶şÎ¬Êı×éÖĞ²éÕÒ£¬ÓĞĞòÊı×é*/
 bool findNumberInArray(int *array,int width,int high,int num)
 {
 	if(NULL == array)
@@ -208,7 +216,7 @@ bool findNumberInArray(int *array,int width,int high,int num)
 	}
 	return false;
 }
-
+/*Êı×éÖĞÁ¬³Ë×î´óµÄ£¬¿ÉÄÜÓĞ¸ººÅ*/
 double findMaxProduct(double *array,int length)//¶Ô¶¯Ì¬¹æ»®ÎÊÌâÒªÕÒµ½×´Ì¬×ªÒÆ·½³Ì
 {
 	if (NULL == array)
@@ -225,7 +233,7 @@ double findMaxProduct(double *array,int length)//¶Ô¶¯Ì¬¹æ»®ÎÊÌâÒªÕÒµ½×´Ì¬×ªÒÆ·½³
 	}
 	return maxproduct;
 }
-
+/*Êı×éÁ¬ĞøºÍ×î´óµÄ*/
 double findMaxSum(double *array,int length)//¶Ô¶¯Ì¬¹æ»®ÎÊÌâÒªÕÒµ½×´Ì¬×ªÒÆ·½³Ì
 {
 	if (NULL == array)
@@ -240,7 +248,7 @@ double findMaxSum(double *array,int length)//¶Ô¶¯Ì¬¹æ»®ÎÊÌâÒªÕÒµ½×´Ì¬×ªÒÆ·½³Ì
 	}
 	return maxSum;
 }
-
+/*Êı×ÖÔÚÅÅĞòÊı×éÖĞ³öÏÖµÄ´ÎÊı ÃæÊÔÌâ38*/
 int getFirstKIndex(int *array,int from,int to,int k)
 {
 	if(from>to)
@@ -304,6 +312,33 @@ int getNumberOfK(int *array,int length,int k)
 		kNumber = lastKIndex - firstKIndex +1;
 	}
 	return kNumber;
+}
+
+/*ÕÒ³öÊı×éÖĞ³¤¶È³¬¹ıÊı×é³¤¶ÈÒ»°ëµÄÊı×Ö£¬´úÂë²»¶Ô£¬ÔÙĞŞ¸Ä
+*/
+int moreThanHalfNumber(int *array,int length)
+{
+	int count = 1;
+	int number = array[0];
+	int i = 0;
+	for(i=1;i<length;i++)
+	{
+		if(count ==0)
+		{
+			number=array[i];
+			count = 1;
+		}
+		else if(array[i]==number)
+		{
+			count++;
+		}
+		else
+			count--;
+	}
+	if(count>0)
+		return number;
+	else
+		return 0;
 }
 /*¸ø¶¨Ò»¸öÅÅĞòÊı×é£¬ÄãĞèÒªÔÚÔ­µØÉ¾³ıÖØ¸´³öÏÖµÄÔªËØ£¬Ê¹µÃÃ¿¸öÔªËØÖ»³öÏÖÒ»´Î£¬·µ»ØÒÆ³ıºóÊı×éµÄĞÂ³¤¶È¡£
 

@@ -135,7 +135,8 @@ int maxHuiWen(char *s,int length)
 	}
 	return max;
 }
-
+/*字符串的全排列
+*/
 void calcAllPermutation(char *s,int from,int to)
 {
 	if(from == to)
@@ -158,6 +159,7 @@ void calcAllPermutation(char *s,int from,int to)
 /*
 给定两个分别由字母组成的字符串A和字符串B，字符串B的长度比字符串A短。
 请问，如何最快地判断字符串B中所有字母是否都在字符串A里？
+hash相当于是个位图，出现的字符上置为1，不出现的就是0
 */
 
 bool stringContain(char *a, char *b)

@@ -178,7 +178,7 @@ void mergeSort(int *a, int low, int high)
 	return;
 }
 
-/*∂—≈≈*/
+/*∂—≈≈ ¥Û∂•∂—*/
 void headAdjust(int *a, int from, int end)
 {
 	int i;

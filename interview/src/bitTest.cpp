@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <string.h>
 
-/*二进制中1的个数*/
+/*二进制中1的个数面试题10 剑指offer*/
 int countOneInNumber(int num)
 {
 	int count = 0;
@@ -13,7 +13,7 @@ int countOneInNumber(int num)
 	}
 	return count;
 }
-/*第一个只出现一次的字符*/
+/*第一个只出现一次的字符  面试题35 剑指offer 开hash表*/
 char findFirstOneChar(char *s)
 {
 	if(NULL == s)
@@ -42,7 +42,7 @@ char findFirstOneChar(char *s)
 	}
 	return '\0';
 }
-
+/*替换空格  面试题4 剑指offer*/
 void replaceBlank(char *string,int length)
 {
 	int i = 0;
@@ -76,6 +76,11 @@ void replaceBlank(char *string,int length)
 		indexOfOrignal--;
 	}
 }
+
+/*数组中只出现一次的数字
+一个整型数组里除了连个数字之外，其他数字都出现了两次。请写出程序找出这两个出现一次的数字，
+要求时间复杂度是O（n），空间复杂度是O（1）*/
+/*两个异或结果肯定不为0，找出第一个为1的位数，根据这个位数来区分两个数组*/
 int findFirst1inbit(int num)
 {
 	int firstBitIndex = 0;

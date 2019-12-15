@@ -51,25 +51,3 @@ pList creatList()
 	return headList;
 
 }
-/*找出数组中长度超过数组长度一半的数字，代码不对，再修改
-*/
-int moreThanHalfNumber(int *array,int length)
-{
-	int count = 1;
-	int number = array[0];
-	int i = 0;
-	for(i=1;i<length;i++)
-	{
-		if(array[i]!=number)
-		{
-			count=1;
-			number = array[i];
-		}
-		else
-			count++;
-	}
-	if(count>0)
-		return number;
-	else
-		return 0;
-}
