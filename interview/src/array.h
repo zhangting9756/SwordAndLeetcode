@@ -52,4 +52,13 @@ void moveZeroes(int* nums, int numsSize);
 /*找出数组中长度超过数组长度一半的数字，代码不对，再修改
 */
 int moreThanHalfNumber(int *array,int length);
+/*判断是否为丑数*/
+bool isAugly(int num);
+/*简单粗暴方法寻找第index个丑数*/
+int getAuglyNum(int index);
+/*保存丑数方法*/
+int getAuglyNum1(int index);
+/*合并两个有序数组
+给定两个有序整数数组 nums1 和 nums2，将 nums2 合并到 nums1 中，使得 num1 成为一个有序数组。*/
+void merge(int* nums1, int nums1Size, int m, int* nums2, int nums2Size, int n);
 #endif

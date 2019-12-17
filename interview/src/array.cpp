@@ -1,5 +1,5 @@
 #include <stdio.h>
-
+#include <stdlib.h>
 
 #include "sort.h"
 #include "array.h"
@@ -526,3 +526,102 @@ void moveZeroes(int* nums, int numsSize)
 	}
 }
 
+/*丑数*/
+bool isAugly(int num)
+{
+	while(num%2==0)
+		num=num/2;
+	while(num%3==0)
+		num=num/3;
+	while(num%5==0)
+		num=num/5;
+	if(num==1)
+		return true;
+	else
+		return false;
+}
+/*简单粗暴方法寻找第index个丑数*/
+int getAuglyNum(int index)
+{
+	int count=0;
+	int number=0;
+	while(count<index)
+	{
+		number++;
+		if(isAugly(number))
+			count++;
+	}
+	return number;
+}
+int minNum(int a,int b,int c)
+{
+	int min = (a<b)?a:b;
+	min = (min<c)?min:c;
+	return min;
+}
+/*保存丑数方法*/
+int getAuglyNum1(int index)
+{
+	int *uglyNumbers = (int *)malloc(sizeof(int)*index);
+	uglyNumbers[0]=1;
+	int m2 =0;
+	int m3 =0;
+	int m5 =0;
+	int m  =1;
+	while(m<index)
+	{
+		uglyNumbers[m]=minNum(uglyNumbers[m2]*2,uglyNumbers[m3]*3,uglyNumbers[m5]*5);
+		while(uglyNumbers[m2]*2<=uglyNumbers[m])
+			m2++;
+		while(uglyNumbers[m3]*3<=uglyNumbers[m])
+			m3++;
+		while(uglyNumbers[m5]*5<=uglyNumbers[m])
+			m5++;
+		m++;
+	}
+	return uglyNumbers[index-1];
+
+}
+/*合并两个有序数组
+给定两个有序整数数组 nums1 和 nums2，将 nums2 合并到 nums1 中，使得 num1 成为一个有序数组。*/
+void merge(int* nums1, int nums1Size, int m, int* nums2, int nums2Size, int n)
+{
+	int i=m-1;
+	int j=n-1;
+	int k=m+n-1;
+	if (k<nums1Size-1)
+		return;
+	while(i>=0&&j>=0&&m>=0)
+	{
+		if(nums1[i]>nums2[j])
+		{
+			nums1[k]=nums1[i];
+			i--;
+		}
+		else
+		{
+			nums1[k]=nums2[j];
+			j--;
+		}
+		k--;
+		if(i<0||j<0)
+			break;
+	}
+	if(i<0&&k>=0)
+	{
+		for(;j>=0&&k>=0;j--)
+		{
+			nums1[k]=nums2[j];
+			k--;
+		}
+	}
+	if(j<0&&k>=0)
+	{
+		for(;i>=0&&m>=0;i--)
+		{
+			nums1[k]=nums1[i];
+			k--;
+		}
+	}
+
+}

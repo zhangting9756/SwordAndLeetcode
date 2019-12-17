@@ -25,13 +25,14 @@ int _tmain(int argc, _TCHAR* argv[])
 {
 	int length = 5;
 	//int a = -123;
-	int a[9]= {1,3,3,3,3,3,5,4,2};
+	int nums1[6]= {4,5,6,0,0,0};
+	int nums2[3]= {1,2,3};
 	int m=-1;
 	//int b[6] = {0};
 	char c[] = {"ABCD"};
 	char b[]= {"BAD"};
 	//length = reverse(a);
-	m = stringContain(c, b);
+	merge(nums1, 6, 3, nums2, 3, 3);
 	system("pause");
 	return 0;
 }
