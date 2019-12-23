@@ -23,16 +23,16 @@ int b_g[5]={3, 8, 2, 4,5};
 
 int _tmain(int argc, _TCHAR* argv[])
 {
-	int length = 5;
+	int length = -1;
 	//int a = -123;
-	int nums1[6]= {4,5,6,0,0,0};
+	int nums1[4]= {7, 5, 6, 4};
 	int nums2[3]= {1,2,3};
 	int m=-1;
 	//int b[6] = {0};
 	char c[] = {"ABCD"};
 	char b[]= {"BAD"};
 	//length = reverse(a);
-	merge(nums1, 6, 3, nums2, 3, 3);
+	length=inversePairs(nums1, 4);
 	system("pause");
 	return 0;
 }
