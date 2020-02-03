@@ -25,14 +25,16 @@ int _tmain(int argc, _TCHAR* argv[])
 {
 	int length = -1;
 	//int a = -123;
-	int nums1[4]= {7, 5, 6, 4};
-	int nums2[3]= {1,2,3};
+	//int nums1[4];
+	char *p[] = {"test1","test2"};
+	printf("%s",p[0]);
+	int nums1[6]= {7,1,5,3,6,4};
 	int m=-1;
 	//int b[6] = {0};
 	char c[] = {"ABCD"};
 	char b[]= {"BAD"};
 	//length = reverse(a);
-	length=inversePairs(nums1, 4);
+	length=maxProfit2(nums1, 6);
 	system("pause");
 	return 0;
 }

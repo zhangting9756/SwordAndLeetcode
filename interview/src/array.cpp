@@ -364,7 +364,7 @@ int removeDuplicates(int* nums, int numsSize)
 	}
 	return count;
 }
-/*买卖股票的最佳时机 II*/
+/*买卖股票的最佳时机 II可以交易多次*/
 int maxProfit(int* prices, int pricesSize)
 {
 	if(prices == NULL || pricesSize <=0)
@@ -377,6 +377,28 @@ int maxProfit(int* prices, int pricesSize)
 			maxProfit += prices[i]-prices[i-1];
 	}
 	return maxProfit;
+}
+
+/*买卖股票的最佳时机 动态规划只允许交易一次*/
+int maxProfit2(int* prices, int pricesSize){
+	if(prices == NULL || pricesSize <=0)
+		return 0;
+	int i =0;
+	int maxProfit = 0;
+	int cur = prices[0];
+	for(i = 1;i<pricesSize;i++)
+	{
+		if(prices[i]<cur)
+			cur = prices[i];
+		else{
+			int tmp = prices[i]-cur;
+			if(tmp>maxProfit)
+				maxProfit = tmp;
+		}
+
+	}
+	return maxProfit;
+
 }
 
 int* twoSum(int* nums, int numsSize, int target, int* returnSize)
