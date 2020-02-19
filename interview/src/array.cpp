@@ -248,6 +248,29 @@ double findMaxSum(double *array,int length)//对动态规划问题要找到状态转移方程
 	}
 	return maxSum;
 }
+/*打家劫舍，动态规划*/
+int rob(int* nums, int numsSize){
+	if(numsSize == 0)
+		return 0;
+	if(numsSize == 1)
+		return nums[0];
+	if(numsSize == 2)
+		return MAX(nums[0],nums[1]);
+	int *maxvalue = (int *)malloc(sizeof(int)*numsSize);
+	maxvalue[0]=nums[0];
+	maxvalue[1]=MAX(nums[0],nums[1]);
+	int i = 0;
+	int value1 = 0;
+	int value2 = 0;
+	for(i=2;i<numsSize;i++)
+	{
+		value1 = nums[i] + maxvalue[i - 2];
+		value2 = maxvalue[i - 1];
+		maxvalue[i] = MAX(value1, value2);
+	}
+	return maxvalue[numsSize-1];
+}
+
 /*数字在排序数组中出现的次数 面试题38*/
 int getFirstKIndex(int *array,int from,int to,int k)
 {

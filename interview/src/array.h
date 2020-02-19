@@ -66,4 +66,6 @@ void merge(int* nums1, int nums1Size, int m, int* nums2, int nums2Size, int n);
 /*数组中的逆序对*/
 int InversePairsCore(int *data,int *copy,int start,int end);
 int inversePairs(int *data,int length);
+/*打家劫舍，动态规划*/
+int rob(int* nums, int numsSize);
 #endif
