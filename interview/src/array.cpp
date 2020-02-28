@@ -722,3 +722,41 @@ int inversePairs(int *data,int length)
 	delete[] copy;
 	return count;
 }
+
+/*汉明距离
+两个整数之间的汉明距离指的是这两个数字对应二进制位不同的位置的数目*/
+int hammingDistance(int x, int y){
+	int count = 0;
+	int a = x^y;
+	while(a!=0)
+	{
+		if((a&1)==1)
+			count++;
+		a=a>>1;
+	}
+	return count;
+}
+/**/
+unsigned reverseBits(uint32_t n) {
+	uint32_t m = 0;
+	int t = 0;
+	while(n!=0)
+	{
+		m += pow(2,t);
+		t++;
+	}
+	return m;
+
+}
+
+/*缺失数字*/
+int missingNumber(int* nums, int numsSize){
+
+	int i =0;
+	int sum = 0;
+	for(i=0;i<numsSize;i++)
+	{
+		sum += (i+1-nums[i]);
+	}
+	return sum;
+}

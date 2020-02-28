@@ -175,3 +175,24 @@ bool isPalindrome1(struct ListNode* head){
 	return true;
 
 }
+/*判断是否为环形链表*/
+bool hasCycle(struct ListNode *head) {
+	if(head == NULL || head->next == NULL)
+		return false;
+	struct ListNode *slow = head;
+	struct ListNode *fast = head;
+	fast = fast->next->next;
+	slow = slow->next;
+	while(1)
+	{
+		if(fast == NULL || fast->next == NULL)
+			return false;
+		else if(fast == slow || fast->next == slow)
+			return true;
+		else
+		{
+			fast = fast->next->next;
+			slow = slow->next;
+		}
+	}
+}

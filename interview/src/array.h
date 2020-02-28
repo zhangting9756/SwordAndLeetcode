@@ -68,4 +68,10 @@ int InversePairsCore(int *data,int *copy,int start,int end);
 int inversePairs(int *data,int length);
 /*打家劫舍，动态规划*/
 int rob(int* nums, int numsSize);
+
+/*汉明距离
+两个整数之间的汉明距离指的是这两个数字对应二进制位不同的位置的数目*/
+int hammingDistance(int x, int y);
+/*缺失数字*/
+int missingNumber(int* nums, int numsSize);
 #endif
