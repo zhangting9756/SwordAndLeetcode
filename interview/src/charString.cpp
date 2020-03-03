@@ -505,3 +505,37 @@ char *longestCommonPrefix(char ** strs, int strsSize)
 	}
 	return str;
 }
+
+/*有效的括号
+给定一个只包括 '('，')'，'{'，'}'，'['，']' 的字符串，判断字符串是否有效。
+
+有效字符串需满足：
+
+左括号必须用相同类型的右括号闭合。
+左括号必须以正确的顺序闭合。
+注意空字符串可被认为是有效字符串。*/
+bool isValid(char * s){
+	if( s == NULL )
+		return false;
+	char *stack = (char *) malloc( sizeof(char) * ( strlen(s)+1 ) );
+	int top = 0;
+	for( int i=0; s[i]!='\0'; i++)
+	{
+		if(s[i]=='(' || s[i]=='[' || s[i]=='{') //左括号入栈
+			stack[++top] = s[i];
+		else if( (s[i]==')'&&stack[top]=='(') || (s[i]==']'&&stack[top]=='[') || (s[i]=='}'&&stack[top]=='{') ) //右括号比对
+			top--;
+		else    //比对失败
+			return false;
+	}
+	if( stack!= NULL)
+	{
+		free(stack);
+		stack = NULL;
+	}
+	if( top == 0 )  //字符串结束且栈空
+		return true;
+	return false;
+
+
+}

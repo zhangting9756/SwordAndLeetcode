@@ -23,15 +23,15 @@ int b_g[5]={3, 8, 2, 4,5};
 
 int _tmain(int argc, _TCHAR* argv[])
 {
-	int length = -1;
+	unsigned int length= 0;
 	char *p[] = {"test1","test2"};
 	int nums1[2]= {2,1};
 	int m=-1;
 	//int b[6] = {0};
 	char c[] = {"ABCD"};
 	char b[]= {"BAD"};
-	pList a = creatList();
-	length=isPalindrome(a);
+	unsigned int a = 5;
+	length=reverseBits(a);
 	system("pause");
 	return 0;
 }

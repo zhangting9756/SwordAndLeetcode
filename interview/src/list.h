@@ -4,6 +4,12 @@ typedef struct ListNode{
 	struct ListNode *next;
 }Node,*pList;
 
+typedef struct TreeNode {
+	int val;
+	struct TreeNode *left;
+	struct TreeNode *right;
+}TreeNode,*pTreeNode;
+
 void reserveList(pList headList);
 pList creatList();
 

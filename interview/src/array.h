@@ -72,6 +72,8 @@ int rob(int* nums, int numsSize);
 /*汉明距离
 两个整数之间的汉明距离指的是这两个数字对应二进制位不同的位置的数目*/
 int hammingDistance(int x, int y);
+/*颠倒二进制位数*/
+unsigned reverseBits(unsigned int n);
 /*缺失数字*/
 int missingNumber(int* nums, int numsSize);
 #endif

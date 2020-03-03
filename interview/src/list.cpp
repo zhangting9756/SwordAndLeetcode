@@ -196,3 +196,33 @@ bool hasCycle(struct ListNode *head) {
 		}
 	}
 }
+
+
+/*二叉树的最大深度,面试题39，二叉树的深度*/
+int maxDepth(struct TreeNode* root){
+	int deepRigt = 0;
+	int deepLeft = 0;
+
+	if(root == NULL)
+		return 0;
+	else
+	{
+		deepRigt=maxDepth(root->right)+1;
+		deepLeft=maxDepth(root->left)+1;
+	}
+	int depth = (deepLeft > deepRigt) ? deepLeft : deepRigt;
+	return depth;
+
+}
+/*判断是否为平衡二叉树，面试题39*/
+bool isBalanced(struct TreeNode* root)
+{
+	if(root == NULL)
+		return true;
+	int deepRigt = isBalanced(root->left);
+	int deepLeft = isBalanced(root->right);
+	int diff = deepLeft - deepRigt;
+	if(diff>1 || diff<-1)
+		return false;
+	return isBalanced(root->left)&&isBalanced(root->right);
+}

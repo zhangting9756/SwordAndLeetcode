@@ -736,14 +736,18 @@ int hammingDistance(int x, int y){
 	}
 	return count;
 }
-/**/
-unsigned reverseBits(uint32_t n) {
-	uint32_t m = 0;
+/*颠倒二进制位数*/
+unsigned reverseBits(unsigned int n) {
+	unsigned int m = 0;
 	int t = 0;
-	while(n!=0)
-	{
-		m += pow(2,t);
-		t++;
+	while(t<32)
+	{	
+		m |= (n&0x1);
+	    if(t<31)
+			m <<= 1;
+
+		n = n >> 1;
+	    t++;
 	}
 	return m;
 
@@ -760,3 +764,4 @@ int missingNumber(int* nums, int numsSize){
 	}
 	return sum;
 }
+
