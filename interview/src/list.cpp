@@ -226,3 +226,22 @@ bool isBalanced(struct TreeNode* root)
 		return false;
 	return isBalanced(root->left)&&isBalanced(root->right);
 }
+
+/*判断是否为对称二叉树*/
+bool MyisSymmetric(struct TreeNode *Left,struct TreeNode *Right)
+{
+	if(!Left && !Right)
+		return true;
+	if(!Left || !Right)
+		return false;
+	if(Right->val!=Left->val)
+		return false;
+	return MyisSymmetric(Left->left,Right->right) && MyisSymmetric(Left->right,Right->left);
+}
+
+bool isSymmetric(struct TreeNode *Root)
+{
+	if(!Root)
+		return true;
+	return MyisSymmetric(Root->left,Root->right);
+}
