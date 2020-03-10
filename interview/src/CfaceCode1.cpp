@@ -31,7 +31,7 @@ int _tmain(int argc, _TCHAR* argv[])
 	char c[] = {"ABCD"};
 	char b[]= {"BAD"};
 	unsigned int a = 5;
-	length=reverseBits(a);
+	length=countPrimes1(10);
 	system("pause");
 	return 0;
 }

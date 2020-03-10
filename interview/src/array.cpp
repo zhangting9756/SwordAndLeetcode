@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <math.h>
 
 #include "sort.h"
 #include "array.h"
@@ -763,5 +764,80 @@ int missingNumber(int* nums, int numsSize){
 		sum += (i+1-nums[i]);
 	}
 	return sum;
+}
+
+/*统计质数*/
+bool isPrimes(int m)
+{
+	int i=2;
+	int s = int(sqrt(double (m)));
+	while(i<=s)
+	{
+		if(m%i==0)
+			return false;
+		i++;
+	}
+	return true;
+}
+int countPrimes(int n){
+	if (n<=1)
+		return 0;
+	if(n==2)
+		return 0;
+	int count = 1;
+	int i = 3;
+	while(i<n)
+	{
+		if(isPrimes(i))
+			count++;
+		i++;
+	}
+	return count;
+}
+/*统计质数1*/
+int countPrimes1(int n){
+	if (n<=1)
+		return 0;
+	if(n==2)
+		return 0;
+	int* flag = (int *)malloc(n*sizeof(int));
+	for(int i = 0;i<n+1;i++)
+		flag[i]=true;
+	int count = 0;
+	for(int i =2;i<n;i++)
+	{
+		if(flag[i])
+		{
+			for(int j = i+i;j<n;j+=i)
+				flag[j]=false;
+			count++;
+		}
+	}
+	return count;
+}
+/*判断是否为3的幂*/
+bool isPowerOf3_1(int m)
+{
+	if (n == 1) 
+		return true;
+	while (n > 3 && n % 3 == 0) 
+	{
+		n = n / 3;
+	}
+	return n == 3;
+}
+
+bool isPowerOf3_2(int m)
+{
+	if (n == 1) 
+		return true;
+	if (n >= 3 && n % 3 == 0) 
+		return isPowerOf3_2(n / 3);
+	return false;
+}
+
+bool isPowerOf3_3(int m)
+{
+	return n > 0 && 1162261467 % n == 0;
 }
 

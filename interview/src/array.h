@@ -76,4 +76,14 @@ int hammingDistance(int x, int y);
 unsigned reverseBits(unsigned int n);
 /*缺失数字*/
 int missingNumber(int* nums, int numsSize);
+
+/*统计质数*/
+bool isPrimes(int m);
+int countPrimes(int n);
+int countPrimes1(int n);
+
+/*判断是否为3的幂*/
+bool isPowerOf3_1(int m);
+bool isPowerOf3_2(int m);
+bool isPowerOf3_3(int m);
 #endif
