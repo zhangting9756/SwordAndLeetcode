@@ -1,11 +1,11 @@
-#include <stdio.h>
+ï»¿#include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
 
 #include "sort.h"
 #include "array.h"
 
-/*×îĞ¡µÄK¸öÊı£¬²ÉÓÃ¿ìÅÅµÄË¼Ïë*/
+/*æœ€å°çš„Kä¸ªæ•°ï¼Œé‡‡ç”¨å¿«æ’çš„æ€æƒ³*/
 void getLeastNumber(int *input, int *output, int length,int k)
 {
 	int i =0;
@@ -26,7 +26,7 @@ void getLeastNumber(int *input, int *output, int length,int k)
 	}
 
 }
-/*×îĞ¡µÄK¸öÊı£¬²ÉÓÃ¶ÑÅÅµÄË¼Ïë*/
+/*æœ€å°çš„Kä¸ªæ•°ï¼Œé‡‡ç”¨å †æ’çš„æ€æƒ³*/
 void getLeastNumbers(int *input, int *output, int length,int k)
 {
 	int i = 0;
@@ -46,8 +46,8 @@ void getLeastNumbers(int *input, int *output, int length,int k)
 	}
 }
 
-/*Ñ°ÕÒºÍÎª¶¨ÖµµÄÁ½¸öÊı
-ÊäÈëÒ»¸öÊı×éºÍÒ»¸öÊı×Ö£¬ÔÚÊı×éÖĞ²éÕÒÁ½¸öÊı£¬Ê¹µÃËüÃÇµÄºÍÕıºÃÊÇÊäÈëµÄÄÇ¸öÊı×Ö¡£
+/*å¯»æ‰¾å’Œä¸ºå®šå€¼çš„ä¸¤ä¸ªæ•°
+è¾“å…¥ä¸€ä¸ªæ•°ç»„å’Œä¸€ä¸ªæ•°å­—ï¼Œåœ¨æ•°ç»„ä¸­æŸ¥æ‰¾ä¸¤ä¸ªæ•°ï¼Œä½¿å¾—å®ƒä»¬çš„å’Œæ­£å¥½æ˜¯è¾“å…¥çš„é‚£ä¸ªæ•°å­—ã€‚
 */
 bool findNumberWithSum(int *array,int *num1,int *num2,int length,int sum)
 {
@@ -75,7 +75,7 @@ bool findNumberWithSum(int *array,int *num1,int *num2,int length,int sum)
 	}
 	return false;
 }
-/*Ñ°ÕÒºÍÎª¶¨ÖµµÄ¶à¸öÊı*/
+/*å¯»æ‰¾å’Œä¸ºå®šå€¼çš„å¤šä¸ªæ•°*/
 void printContinueSequence(int start,int end)
 {
 	int i;
@@ -113,7 +113,7 @@ void findContunieSequence(int num)
 	}
 
 }
-/*ÇàÍÜÌøÌ¨½×*/
+/*é’è›™è·³å°é˜¶*/
 int faBonacci(int num)
 {
 	if(num <= 0)
@@ -130,8 +130,8 @@ int faBonacci(int num)
 
 int faBonacci1(int num)
 {
-	int minNum=1;   //Ò»¸öÌ¨½×Ê±µÄ·½·¨Êı
-	int maxNum=2;   //Á½¸öÌ¨½×µÄ·½·¨Êı
+	int minNum=1;   //ä¸€ä¸ªå°é˜¶æ—¶çš„æ–¹æ³•æ•°
+	int maxNum=2;   //ä¸¤ä¸ªå°é˜¶çš„æ–¹æ³•æ•°
 	int fibN=0;
 	int i=2;
 	if(num ==0)
@@ -149,7 +149,7 @@ int faBonacci1(int num)
 	}
 	return fibN;
 }
-/*µ÷ÕûÊı×éË³ĞòÊ¹ÆæÊıÎ»ÓÚÅ¼ÊıÇ°Ãæ£¬½£Ö¸offer ÃæÊÔÌâ14*/
+/*è°ƒæ•´æ•°ç»„é¡ºåºä½¿å¥‡æ•°ä½äºå¶æ•°å‰é¢ï¼Œå‰‘æŒ‡offer é¢è¯•é¢˜14*/
 bool oddEven(int num)
 {
 	if(num%2 == 1)
@@ -171,7 +171,7 @@ void reOderOddEven(int *array,int length)
 		swap(array,start,end);
 	}
 }
-/*ºì°×À¶Çò£¬ÏÖÓĞn¸öºì°×À¶ÈıÖÖ²»Í¬ÑÕÉ«µÄĞ¡Çò£¬ÂÒĞòÅÅÁĞÔÚÒ»Æğ£¬ÇëÍ¨¹ıÁ½Á½½»»»ÈÎÒâÁ½¸öÇò£¬Ê¹µÃ´Ó×óÖÁÓÒ£¬ÒÀ´ÎÊÇÒ»Ğ©ºìÇò¡¢Ò»Ğ©°×Çò¡¢Ò»Ğ©À¶Çò¡£
+/*çº¢ç™½è“çƒï¼Œç°æœ‰nä¸ªçº¢ç™½è“ä¸‰ç§ä¸åŒé¢œè‰²çš„å°çƒï¼Œä¹±åºæ’åˆ—åœ¨ä¸€èµ·ï¼Œè¯·é€šè¿‡ä¸¤ä¸¤äº¤æ¢ä»»æ„ä¸¤ä¸ªçƒï¼Œä½¿å¾—ä»å·¦è‡³å³ï¼Œä¾æ¬¡æ˜¯ä¸€äº›çº¢çƒã€ä¸€äº›ç™½çƒã€ä¸€äº›è“çƒã€‚
 */
 void sortRedWhiteBlue(int *array,int length)
 {
@@ -199,7 +199,7 @@ void sortRedWhiteBlue(int *array,int length)
 }
 
 
-/*¶şÎ¬Êı×éÖĞ²éÕÒ£¬ÓĞĞòÊı×é*/
+/*äºŒç»´æ•°ç»„ä¸­æŸ¥æ‰¾ï¼Œæœ‰åºæ•°ç»„*/
 bool findNumberInArray(int *array,int width,int high,int num)
 {
 	if(NULL == array)
@@ -217,8 +217,8 @@ bool findNumberInArray(int *array,int width,int high,int num)
 	}
 	return false;
 }
-/*Êı×éÖĞÁ¬³Ë×î´óµÄ£¬¿ÉÄÜÓĞ¸ººÅ*/
-double findMaxProduct(double *array,int length)//¶Ô¶¯Ì¬¹æ»®ÎÊÌâÒªÕÒµ½×´Ì¬×ªÒÆ·½³Ì
+/*æ•°ç»„ä¸­è¿ä¹˜æœ€å¤§çš„ï¼Œå¯èƒ½æœ‰è´Ÿå·*/
+double findMaxProduct(double *array,int length)//å¯¹åŠ¨æ€è§„åˆ’é—®é¢˜è¦æ‰¾åˆ°çŠ¶æ€è½¬ç§»æ–¹ç¨‹
 {
 	if (NULL == array)
 		return 0;
@@ -234,8 +234,8 @@ double findMaxProduct(double *array,int length)//¶Ô¶¯Ì¬¹æ»®ÎÊÌâÒªÕÒµ½×´Ì¬×ªÒÆ·½³
 	}
 	return maxproduct;
 }
-/*Êı×éÁ¬ĞøºÍ×î´óµÄ*/
-double findMaxSum(double *array,int length)//¶Ô¶¯Ì¬¹æ»®ÎÊÌâÒªÕÒµ½×´Ì¬×ªÒÆ·½³Ì
+/*æ•°ç»„è¿ç»­å’Œæœ€å¤§çš„*/
+double findMaxSum(double *array,int length)//å¯¹åŠ¨æ€è§„åˆ’é—®é¢˜è¦æ‰¾åˆ°çŠ¶æ€è½¬ç§»æ–¹ç¨‹
 {
 	if (NULL == array)
 		return 0;
@@ -249,7 +249,7 @@ double findMaxSum(double *array,int length)//¶Ô¶¯Ì¬¹æ»®ÎÊÌâÒªÕÒµ½×´Ì¬×ªÒÆ·½³Ì
 	}
 	return maxSum;
 }
-/*´ò¼Ò½ÙÉá£¬¶¯Ì¬¹æ»®*/
+/*æ‰“å®¶åŠ«èˆï¼ŒåŠ¨æ€è§„åˆ’*/
 int rob(int* nums, int numsSize){
 	if(numsSize == 0)
 		return 0;
@@ -272,7 +272,7 @@ int rob(int* nums, int numsSize){
 	return maxvalue[numsSize-1];
 }
 
-/*Êı×ÖÔÚÅÅĞòÊı×éÖĞ³öÏÖµÄ´ÎÊı ÃæÊÔÌâ38*/
+/*æ•°å­—åœ¨æ’åºæ•°ç»„ä¸­å‡ºç°çš„æ¬¡æ•° é¢è¯•é¢˜38*/
 int getFirstKIndex(int *array,int from,int to,int k)
 {
 	if(from>to)
@@ -338,7 +338,7 @@ int getNumberOfK(int *array,int length,int k)
 	return kNumber;
 }
 
-/*ÕÒ³öÊı×éÖĞ³¤¶È³¬¹ıÊı×é³¤¶ÈÒ»°ëµÄÊı×Ö£¬´úÂë²»¶Ô£¬ÔÙĞŞ¸Ä
+/*æ‰¾å‡ºæ•°ç»„ä¸­é•¿åº¦è¶…è¿‡æ•°ç»„é•¿åº¦ä¸€åŠçš„æ•°å­—ï¼Œä»£ç ä¸å¯¹ï¼Œå†ä¿®æ”¹
 */
 int moreThanHalfNumber(int *array,int length)
 {
@@ -364,9 +364,9 @@ int moreThanHalfNumber(int *array,int length)
 	else
 		return 0;
 }
-/*¸ø¶¨Ò»¸öÅÅĞòÊı×é£¬ÄãĞèÒªÔÚÔ­µØÉ¾³ıÖØ¸´³öÏÖµÄÔªËØ£¬Ê¹µÃÃ¿¸öÔªËØÖ»³öÏÖÒ»´Î£¬·µ»ØÒÆ³ıºóÊı×éµÄĞÂ³¤¶È¡£
+/*ç»™å®šä¸€ä¸ªæ’åºæ•°ç»„ï¼Œä½ éœ€è¦åœ¨åŸåœ°åˆ é™¤é‡å¤å‡ºç°çš„å…ƒç´ ï¼Œä½¿å¾—æ¯ä¸ªå…ƒç´ åªå‡ºç°ä¸€æ¬¡ï¼Œè¿”å›ç§»é™¤åæ•°ç»„çš„æ–°é•¿åº¦ã€‚
 
-²»ÒªÊ¹ÓÃ¶îÍâµÄÊı×é¿Õ¼ä£¬Äã±ØĞëÔÚÔ­µØĞŞ¸ÄÊäÈëÊı×é²¢ÔÚÊ¹ÓÃ O(1) ¶îÍâ¿Õ¼äµÄÌõ¼şÏÂÍê³É¡£*/
+ä¸è¦ä½¿ç”¨é¢å¤–çš„æ•°ç»„ç©ºé—´ï¼Œä½ å¿…é¡»åœ¨åŸåœ°ä¿®æ”¹è¾“å…¥æ•°ç»„å¹¶åœ¨ä½¿ç”¨ O(1) é¢å¤–ç©ºé—´çš„æ¡ä»¶ä¸‹å®Œæˆã€‚*/
 
 int removeDuplicates(int* nums, int numsSize)
 {
@@ -388,7 +388,7 @@ int removeDuplicates(int* nums, int numsSize)
 	}
 	return count;
 }
-/*ÂòÂô¹ÉÆ±µÄ×î¼ÑÊ±»ú II¿ÉÒÔ½»Ò×¶à´Î*/
+/*ä¹°å–è‚¡ç¥¨çš„æœ€ä½³æ—¶æœº IIå¯ä»¥äº¤æ˜“å¤šæ¬¡*/
 int maxProfit(int* prices, int pricesSize)
 {
 	if(prices == NULL || pricesSize <=0)
@@ -403,7 +403,7 @@ int maxProfit(int* prices, int pricesSize)
 	return maxProfit;
 }
 
-/*ÂòÂô¹ÉÆ±µÄ×î¼ÑÊ±»ú ¶¯Ì¬¹æ»®Ö»ÔÊĞí½»Ò×Ò»´Î*/
+/*ä¹°å–è‚¡ç¥¨çš„æœ€ä½³æ—¶æœº åŠ¨æ€è§„åˆ’åªå…è®¸äº¤æ˜“ä¸€æ¬¡*/
 int maxProfit2(int* prices, int pricesSize){
 	if(prices == NULL || pricesSize <=0)
 		return 0;
@@ -447,7 +447,7 @@ int* twoSum(int* nums, int numsSize, int target, int* returnSize)
 	return returnSize;
 }
 
-/*¸ø¶¨Ò»¸öÊı×é£¬½«Êı×éÖĞµÄÔªËØÏòÓÒÒÆ¶¯ k ¸öÎ»ÖÃ£¬ÆäÖĞ k ÊÇ·Ç¸ºÊı¡£*/
+/*ç»™å®šä¸€ä¸ªæ•°ç»„ï¼Œå°†æ•°ç»„ä¸­çš„å…ƒç´ å‘å³ç§»åŠ¨ k ä¸ªä½ç½®ï¼Œå…¶ä¸­ k æ˜¯éè´Ÿæ•°ã€‚*/
 void reserveArray(int*nums,int begin,int end)
 {
 	int temp =0;
@@ -469,7 +469,7 @@ void rotate(int* nums, int numsSize, int k)
 	reserveArray(nums,0,numsSize-1);
 
 }
-/*¸ø¶¨Ò»¸ö·Ç¿ÕÕûÊıÊı×é£¬³ıÁËÄ³¸öÔªËØÖ»³öÏÖÒ»´ÎÒÔÍâ£¬ÆäÓàÃ¿¸öÔªËØ¾ù³öÏÖÁ½´Î¡£ÕÒ³öÄÇ¸öÖ»³öÏÖÁËÒ»´ÎµÄÔªËØ*/
+/*ç»™å®šä¸€ä¸ªéç©ºæ•´æ•°æ•°ç»„ï¼Œé™¤äº†æŸä¸ªå…ƒç´ åªå‡ºç°ä¸€æ¬¡ä»¥å¤–ï¼Œå…¶ä½™æ¯ä¸ªå…ƒç´ å‡å‡ºç°ä¸¤æ¬¡ã€‚æ‰¾å‡ºé‚£ä¸ªåªå‡ºç°äº†ä¸€æ¬¡çš„å…ƒç´ */
 int singleNumber(int* nums, int numsSize)
 {
 	if(nums==NULL || numsSize<=0)
@@ -482,11 +482,11 @@ int singleNumber(int* nums, int numsSize)
 	return num;
 }
 
-/*¸ø¶¨Ò»¸öÓÉÕûÊı×é³ÉµÄ·Ç¿ÕÊı×éËù±íÊ¾µÄ·Ç¸ºÕûÊı£¬ÔÚ¸ÃÊıµÄ»ù´¡ÉÏ¼ÓÒ»¡£
+/*ç»™å®šä¸€ä¸ªç”±æ•´æ•°ç»„æˆçš„éç©ºæ•°ç»„æ‰€è¡¨ç¤ºçš„éè´Ÿæ•´æ•°ï¼Œåœ¨è¯¥æ•°çš„åŸºç¡€ä¸ŠåŠ ä¸€ã€‚
 
-×î¸ßÎ»Êı×Ö´æ·ÅÔÚÊı×éµÄÊ×Î»£¬ Êı×éÖĞÃ¿¸öÔªËØÖ»´æ´¢µ¥¸öÊı×Ö¡£
+æœ€é«˜ä½æ•°å­—å­˜æ”¾åœ¨æ•°ç»„çš„é¦–ä½ï¼Œ æ•°ç»„ä¸­æ¯ä¸ªå…ƒç´ åªå­˜å‚¨å•ä¸ªæ•°å­—ã€‚
 
-Äã¿ÉÒÔ¼ÙÉè³ıÁËÕûÊı 0 Ö®Íâ£¬Õâ¸öÕûÊı²»»áÒÔÁã¿ªÍ·¡£*/
+ä½ å¯ä»¥å‡è®¾é™¤äº†æ•´æ•° 0 ä¹‹å¤–ï¼Œè¿™ä¸ªæ•´æ•°ä¸ä¼šä»¥é›¶å¼€å¤´ã€‚*/
 int* plusOne(int* digits, int digitsSize, int* returnSize)
 {
 	if(digits == NULL || digitsSize == 0)
@@ -543,7 +543,7 @@ int * plusOne1(int *digits,int length)
 	}
 	return digits;
 }
-/*¸ø¶¨Ò»¸öÊı×é nums£¬±àĞ´Ò»¸öº¯Êı½«ËùÓĞ 0 ÒÆ¶¯µ½Êı×éµÄÄ©Î²£¬Í¬Ê±±£³Ö·ÇÁãÔªËØµÄÏà¶ÔË³Ğò¡£*/
+/*ç»™å®šä¸€ä¸ªæ•°ç»„ numsï¼Œç¼–å†™ä¸€ä¸ªå‡½æ•°å°†æ‰€æœ‰ 0 ç§»åŠ¨åˆ°æ•°ç»„çš„æœ«å°¾ï¼ŒåŒæ—¶ä¿æŒéé›¶å…ƒç´ çš„ç›¸å¯¹é¡ºåºã€‚*/
 void moveZeroes(int* nums, int numsSize)
 {
 	int begin=0;
@@ -572,7 +572,7 @@ void moveZeroes(int* nums, int numsSize)
 	}
 }
 
-/*³óÊı*/
+/*ä¸‘æ•°*/
 bool isAugly(int num)
 {
 	while(num%2==0)
@@ -586,7 +586,7 @@ bool isAugly(int num)
 	else
 		return false;
 }
-/*¼òµ¥´Ö±©·½·¨Ñ°ÕÒµÚindex¸ö³óÊı*/
+/*ç®€å•ç²—æš´æ–¹æ³•å¯»æ‰¾ç¬¬indexä¸ªä¸‘æ•°*/
 int getAuglyNum(int index)
 {
 	int count=0;
@@ -605,7 +605,7 @@ int minNum(int a,int b,int c)
 	min = (min<c)?min:c;
 	return min;
 }
-/*±£´æ³óÊı·½·¨*/
+/*ä¿å­˜ä¸‘æ•°æ–¹æ³•*/
 int getAuglyNum1(int index)
 {
 	int *uglyNumbers = (int *)malloc(sizeof(int)*index);
@@ -628,8 +628,8 @@ int getAuglyNum1(int index)
 	return uglyNumbers[index-1];
 
 }
-/*ºÏ²¢Á½¸öÓĞĞòÊı×é
-¸ø¶¨Á½¸öÓĞĞòÕûÊıÊı×é nums1 ºÍ nums2£¬½« nums2 ºÏ²¢µ½ nums1 ÖĞ£¬Ê¹µÃ num1 ³ÉÎªÒ»¸öÓĞĞòÊı×é¡£*/
+/*åˆå¹¶ä¸¤ä¸ªæœ‰åºæ•°ç»„
+ç»™å®šä¸¤ä¸ªæœ‰åºæ•´æ•°æ•°ç»„ nums1 å’Œ nums2ï¼Œå°† nums2 åˆå¹¶åˆ° nums1 ä¸­ï¼Œä½¿å¾— num1 æˆä¸ºä¸€ä¸ªæœ‰åºæ•°ç»„ã€‚*/
 void merge(int* nums1, int nums1Size, int m, int* nums2, int nums2Size, int n)
 {
 	int i=m-1;
@@ -671,7 +671,7 @@ void merge(int* nums1, int nums1Size, int m, int* nums2, int nums2Size, int n)
 	}
 
 }
-/*Êı×éÖĞµÄÄæĞò¶Ô*/
+/*æ•°ç»„ä¸­çš„é€†åºå¯¹*/
 int InversePairsCore(int *data,int *copy,int start,int end)
 {
 	if(start == end)
@@ -724,8 +724,8 @@ int inversePairs(int *data,int length)
 	return count;
 }
 
-/*ººÃ÷¾àÀë
-Á½¸öÕûÊıÖ®¼äµÄººÃ÷¾àÀëÖ¸µÄÊÇÕâÁ½¸öÊı×Ö¶ÔÓ¦¶ş½øÖÆÎ»²»Í¬µÄÎ»ÖÃµÄÊıÄ¿*/
+/*æ±‰æ˜è·ç¦»
+ä¸¤ä¸ªæ•´æ•°ä¹‹é—´çš„æ±‰æ˜è·ç¦»æŒ‡çš„æ˜¯è¿™ä¸¤ä¸ªæ•°å­—å¯¹åº”äºŒè¿›åˆ¶ä½ä¸åŒçš„ä½ç½®çš„æ•°ç›®*/
 int hammingDistance(int x, int y){
 	int count = 0;
 	int a = x^y;
@@ -737,7 +737,7 @@ int hammingDistance(int x, int y){
 	}
 	return count;
 }
-/*µßµ¹¶ş½øÖÆÎ»Êı*/
+/*é¢ å€’äºŒè¿›åˆ¶ä½æ•°*/
 unsigned reverseBits(unsigned int n) {
 	unsigned int m = 0;
 	int t = 0;
@@ -754,7 +754,7 @@ unsigned reverseBits(unsigned int n) {
 
 }
 
-/*È±Ê§Êı×Ö*/
+/*ç¼ºå¤±æ•°å­—*/
 int missingNumber(int* nums, int numsSize){
 
 	int i =0;
@@ -766,7 +766,7 @@ int missingNumber(int* nums, int numsSize){
 	return sum;
 }
 
-/*Í³¼ÆÖÊÊı*/
+/*ç»Ÿè®¡è´¨æ•°*/
 bool isPrimes(int m)
 {
 	int i=2;
@@ -794,7 +794,7 @@ int countPrimes(int n){
 	}
 	return count;
 }
-/*Í³¼ÆÖÊÊı1*/
+/*ç»Ÿè®¡è´¨æ•°1*/
 int countPrimes1(int n){
 	if (n<=1)
 		return 0;
@@ -815,29 +815,81 @@ int countPrimes1(int n){
 	}
 	return count;
 }
-/*ÅĞ¶ÏÊÇ·ñÎª3µÄÃİ*/
+/*åˆ¤æ–­æ˜¯å¦ä¸º3çš„å¹‚*/
 bool isPowerOf3_1(int m)
 {
-	if (n == 1) 
+	if (m == 1) 
 		return true;
-	while (n > 3 && n % 3 == 0) 
+	while (m > 3 && m % 3 == 0) 
 	{
-		n = n / 3;
+		m = m / 3;
 	}
-	return n == 3;
+	return m == 3;
 }
 
 bool isPowerOf3_2(int m)
 {
-	if (n == 1) 
+	if (m == 1) 
 		return true;
-	if (n >= 3 && n % 3 == 0) 
-		return isPowerOf3_2(n / 3);
+	if (m >= 3 && m % 3 == 0) 
+		return isPowerOf3_2(m / 3);
 	return false;
 }
 
 bool isPowerOf3_3(int m)
 {
-	return n > 0 && 1162261467 % n == 0;
+	return m > 0 && 1162261467 % m == 0;
+}
+
+/*å°†æ•°ç»„åˆ†æˆå’Œç›¸ç­‰çš„ä¸‰ä¸ªéƒ¨åˆ†
+ç»™ä½ ä¸€ä¸ªæ•´æ•°æ•°ç»„Â Aï¼Œåªæœ‰å¯ä»¥å°†å…¶åˆ’åˆ†ä¸ºä¸‰ä¸ªå’Œç›¸ç­‰çš„éç©ºéƒ¨åˆ†æ—¶æ‰è¿”å›Â trueï¼Œå¦åˆ™è¿”å› falseã€‚
+å½¢å¼ä¸Šï¼Œå¦‚æœå¯ä»¥æ‰¾å‡ºç´¢å¼•Â i+1 < jÂ ä¸”æ»¡è¶³Â (A[0] + A[1] + ... + A[i] == A[i+1] + A[i+2] + ... + A[j-1] == A[j] + A[j-1] + ... + A[A.length - 1])Â å°±å¯ä»¥å°†æ•°ç»„ä¸‰ç­‰åˆ†ã€‚
+*/
+bool  canThreePartsEqualSum(int* A, int ASize)
+{
+	if (A == NULL || ASize == 0)
+		return false;
+	int i = 1, j = ASize-2, sum = 0;
+	int presum = A[0], latersum = A[ASize-1];
+	for (i = 0; i < ASize; i++)
+		sum += A[i];
+	if (sum % 3 != 0)
+		return false;
+	int avg = sum / 3;
+	/*
+	for (i = 1; i < ASize; i++)
+	{
+		if (presum == avg)
+			break;
+		else
+			presum += A[i];
+	}
+	if (i > ASize-2)
+		return false;
+	for (j = ASize - 2; j>=i; j--)
+	{
+		if (latersum == avg)
+			break;
+		else
+			latersum += A[j];
+	}
+	if (j < i)
+		return false;
+	else
+		return true;*/
+	i = 1;
+	while (i < j)
+	{
+		if (presum!=avg)
+			presum += A[i++];
+		if (latersum != avg)
+			latersum += A[j--];
+		if (presum == avg && latersum == avg && j>=i)
+			return true;
+	}
+	return false;
+
+
+
 }
 

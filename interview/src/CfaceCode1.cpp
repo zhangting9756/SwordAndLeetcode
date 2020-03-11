@@ -25,14 +25,13 @@ int _tmain(int argc, _TCHAR* argv[])
 {
 	unsigned int length= 0;
 	char *p[] = {"test1","test2"};
-	int nums1[2]= {2,1};
+	int nums1[4] = { 1, -1, 1, -1 };
 	int m=-1;
 	//int b[6] = {0};
 	char c[] = {"ABCD"};
 	char b[]= {"BAD"};
 	unsigned int a = 5;
-	length=countPrimes1(10);
-	system("pause");
+	length = canThreePartsEqualSum(nums1, 4);
 	return 0;
 }
 
