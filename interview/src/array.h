@@ -92,4 +92,10 @@ bool isPowerOf3_3(int m);
 形式上，如果可以找出索引 i+1 < j 且满足 (A[0] + A[1] + ... + A[i] == A[i+1] + A[i+2] + ... + A[j-1] == A[j] + A[j-1] + ... + A[A.length - 1]) 就可以将数组三等分。
 */
 bool  canThreePartsEqualSum(int* A, int ASize);
+
+/* 多数元素
+给定一个大小为 n 的数组，找到其中的多数元素。多数元素是指在数组中出现次数大于 ⌊ n/2 ⌋ 的元素。
+你可以假设数组是非空的，并且给定的数组总是存在多数元素。
+*/
+int majorityElement(int* nums, int numsSize);
 #endif

@@ -888,8 +888,32 @@ bool  canThreePartsEqualSum(int* A, int ASize)
 			return true;
 	}
 	return false;
-
-
-
 }
-
+/* 多数元素
+给定一个大小为 n 的数组，找到其中的多数元素。多数元素是指在数组中出现次数大于 ⌊ n/2 ⌋ 的元素。
+你可以假设数组是非空的，并且给定的数组总是存在多数元素。
+*/
+int majorityElement(int* nums, int numsSize)
+{
+	int count = 1;
+	int number = nums[0];
+	int i = 0;
+	for(i=1;i<numsSize;i++)
+	{
+		if(count ==0)
+		{
+			number=nums[i];
+			count = 1;
+		}
+		else if(nums[i]==number)
+		{
+			count++;
+		}
+		else
+			count--;
+	}
+	if(count>0)
+		return number;
+	else
+		return 0;
+}

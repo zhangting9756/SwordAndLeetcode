@@ -25,13 +25,13 @@ int _tmain(int argc, _TCHAR* argv[])
 {
 	unsigned int length= 0;
 	char *p[] = {"test1","test2"};
-	int nums1[4] = { 1, -1, 1, -1 };
+	int nums1[3] = { 3,2,3 };
 	int m=-1;
 	//int b[6] = {0};
 	char c[] = {"ABCD"};
 	char b[]= {"BAD"};
 	unsigned int a = 5;
-	length = canThreePartsEqualSum(nums1, 4);
+	length = majorityElement(nums1, 3);
 	return 0;
 }
 
