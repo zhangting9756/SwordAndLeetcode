@@ -917,3 +917,69 @@ int majorityElement(int* nums, int numsSize)
 	else
 		return 0;
 }
+/*求众数 II
+给定一个大小为 n 的数组，找出其中所有出现超过 ⌊ n/3 ⌋ 次的元素。摩尔投票法*/
+int* majorityElement(int* nums, int numsSize, int* returnSize){
+	int *arr = NULL;
+	int can1, can2;
+	int cnt1 = 0, cnt2 = 0;
+	int i;
+
+	if (nums == NULL || numsSize <= 1) {
+		*returnSize = numsSize;
+		return nums;
+	} 
+	can1 = nums[0];
+	can2 = nums[1];
+
+	for (i = 0; i < numsSize; i++) {
+		if (nums[i] == can1) {
+			cnt1++;
+			continue;
+		} else if (nums[i] == can2) {
+			cnt2++;
+			continue;
+		} else {
+			cnt1--;
+			cnt2--;
+		}
+
+		/* 保证每次只替换一个数据 */
+		if (cnt1 < 0) {
+			can1 = nums[i];
+			cnt1 = 1;
+			cnt2++;
+		}
+
+		if (cnt2 < 0) {
+			can2 = nums[i];
+			cnt2 = 1;
+			cnt1++;
+		}            
+	}
+
+	cnt1 = 0;
+	cnt2 = 0;
+	for (i = 0; i < numsSize; i++) {
+		if (nums[i] == can1)  {
+			cnt1++;
+		} else if (nums[i] == can2) {
+			cnt2++;
+		}
+	}
+
+	arr = (int *)malloc(sizeof(int) * 2);
+	*returnSize = 0;
+	i = 0;
+	if (cnt1 > numsSize / 3) {
+		arr[i++] = can1;
+		*returnSize += 1;
+	}
+	if (cnt2 > numsSize / 3) {
+		arr[i++] = can2;
+		*returnSize += 1;
+	}
+
+	return arr;
+}
+

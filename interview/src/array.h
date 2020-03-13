@@ -98,4 +98,7 @@ bool  canThreePartsEqualSum(int* A, int ASize);
 你可以假设数组是非空的，并且给定的数组总是存在多数元素。
 */
 int majorityElement(int* nums, int numsSize);
+/*求众数 II
+给定一个大小为 n 的数组，找出其中所有出现超过 ⌊ n/3 ⌋ 次的元素。摩尔投票法*/
+int* majorityElement(int* nums, int numsSize, int* returnSize);
 #endif
