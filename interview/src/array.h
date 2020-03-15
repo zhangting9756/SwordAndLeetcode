@@ -101,4 +101,8 @@ int majorityElement(int* nums, int numsSize);
 /*求众数 II
 给定一个大小为 n 的数组，找出其中所有出现超过 ⌊ n/3 ⌋ 次的元素。摩尔投票法*/
 int* majorityElement(int* nums, int numsSize, int* returnSize);
+
+/*最长上升子序列
+给定一个无序的整数数组，找到其中最长上升子序列的长度*/
+int lengthOfLIS(int* nums, int numsSize);
 #endif

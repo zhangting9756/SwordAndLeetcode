@@ -25,13 +25,13 @@ int _tmain(int argc, _TCHAR* argv[])
 {
 	unsigned int length= 0;
 	char *p[] = {"test1","test2"};
-	int nums1[3] = { 3,2,3 };
+	int nums1[8] = { 10, 9, 2, 5, 3, 7, 101, 18 };
 	int m=-1;
 	//int b[6] = {0};
 	char c[] = {"ABCD"};
 	char b[]= {"BAD"};
 	unsigned int a = 5;
-	length = majorityElement(nums1, 3);
+	length = lengthOfLIS(nums1, 8);
 	return 0;
 }
 
