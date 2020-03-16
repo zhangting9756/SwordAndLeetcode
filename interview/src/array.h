@@ -51,7 +51,7 @@ int * plusOne1(int *digits,int length) ;
 /*给定一个数组 nums，编写一个函数将所有 0 移动到数组的末尾，同时保持非零元素的相对顺序。*/
 void moveZeroes(int* nums, int numsSize);
 
-/*找出数组中长度超过数组长度一半的数字，代码不对，再修改
+/*找出数组中长度超过数组长度一半的数字，摩尔投票法，已完成
 */
 int moreThanHalfNumber(int *array,int length);
 /*判断是否为丑数*/

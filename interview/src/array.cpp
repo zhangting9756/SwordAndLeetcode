@@ -338,7 +338,7 @@ int getNumberOfK(int *array,int length,int k)
 	return kNumber;
 }
 
-/*找出数组中长度超过数组长度一半的数字，代码不对，再修改
+/*找出数组中长度超过数组长度一半的数字，摩尔投票法
 */
 int moreThanHalfNumber(int *array,int length)
 {
