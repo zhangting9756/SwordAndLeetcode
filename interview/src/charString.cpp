@@ -578,3 +578,131 @@ char * gcdOfStrings(char * str1, char * str2){
 	ret[length] = '\0';
 	return ret;
 }
+
+int countCharacters(char ** words, int wordsSize, char * chars){
+	int hash[HASH_SIZE];
+	int tmpHash[HASH_SIZE];
+	int len = 0;
+	char *pChar = chars;
+	int retLen = 0;
+	int sub = 0;
+
+	if(NULL == words
+		|| 0 == wordsSize
+		|| NULL == chars
+		|| 0 == strlen(chars)){
+			return 0;
+	}
+
+	memset(hash, 0, sizeof(hash));
+	while(*pChar != '\0'){
+		hash[GET_HASH_SUB(*pChar)]++;
+		pChar++;
+	}
+
+	for(int i = 0; i < wordsSize; i++)
+	{
+		memcpy(tmpHash, hash, sizeof(hash));
+		pChar = words[i];
+		len = 0;
+		while(*pChar != '\0')
+		{
+			sub = GET_HASH_SUB(*pChar);
+			if(0 == tmpHash[sub])
+			{
+				break;
+			}
+			tmpHash[sub]--;
+			pChar++;
+			len++;
+		}
+		if(*pChar == '\0')
+		{
+			retLen += len;
+		}
+	}
+
+	return retLen;
+}
+/*罗马数字转整数*/
+int romanToInt(char *s)
+{
+	int temp = 0;   
+	for (int i = 0; i < strlen(s); i++)
+	{
+		switch (s[i])
+		{
+		case 'M':
+			temp = temp + 1000;
+			break;
+		case 'D':
+			temp = temp + 500;
+			break; 
+		case 'C':
+			if(s[i + 1] == 'M')
+			{
+				temp  = temp + 900;
+				i++;                //跳过下一个数，因为已经用过了。
+				break;
+			}
+			else if(s[i + 1] == 'D')
+			{
+				temp  = temp + 400;
+				i++;
+				break;
+			}
+			else
+			{
+				temp = temp + 100;
+				break;
+			}           
+		case 'L':
+			temp = temp + 50;
+			break;
+		case 'X':
+			if(s[i + 1] == 'C')
+			{
+				temp  = temp + 90;
+				i++;                
+				break;
+			}
+			else if(s[i + 1] == 'L')
+			{
+				temp  = temp + 40;
+				i++;
+				break;
+			} 
+			else
+			{                           
+				temp = temp + 10;
+				break; 
+			}
+		case 'V':
+			temp = temp + 5;
+			break; 
+		case 'I':
+			if(s[i + 1] == 'X')
+			{
+				temp  = temp + 9;
+				i++;                
+				break;
+			}
+			else if(s[i + 1] == 'V')
+			{
+				temp  = temp + 4;
+				i++;
+				break;
+			}
+			else
+			{
+				temp = temp + 1;
+				break;                
+			}     
+		default:
+			printf("input is error");
+			break;
+		}
+	}/*end switch*/
+	return temp;
+};
+

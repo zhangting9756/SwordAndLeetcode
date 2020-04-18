@@ -1,3 +1,5 @@
+#define HASH_SIZE (26)
+#define GET_HASH_SUB(val) ((val) % HASH_SIZE)
 /*字符串倒置*/
 void reserve(char *s, int from, int end);
 /*检查是否是回文*/
@@ -40,3 +42,5 @@ int myAtoi(char * str);
 int strStr(char * haystack, char * needle);
 /*最长公共前缀*/
 char *longestCommonPrefix(char ** strs, int strsSize);
+/*罗马数字转整数*/
+int romanToInt(char *s);
