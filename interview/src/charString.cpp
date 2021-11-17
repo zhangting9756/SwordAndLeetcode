@@ -553,7 +553,7 @@ int gcd(int a,int b){
 	else
 		return gcd(b,a%b);	
 }
-
+/*
 char * gcdOfStrings(char * str1, char * str2){
 	int length1 = strlen(str1);
 	int length2 = strlen(str2);
@@ -577,7 +577,7 @@ char * gcdOfStrings(char * str1, char * str2){
 	strncpy(ret, str1, length);
 	ret[length] = '\0';
 	return ret;
-}
+}*/
 
 int countCharacters(char ** words, int wordsSize, char * chars){
 	int hash[HASH_SIZE];

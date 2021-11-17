@@ -1066,3 +1066,50 @@ bool isRectangleOverlap(int* rec1, int rec1Size, int* rec2, int rec2Size)
 		return false;
 	return true;
 }
+
+int largestRectangleArea(int* heights, int heightsSize)
+{
+	if (heightsSize == 0)
+		return 0;
+	int *stack;
+	int *left;
+	int *right;
+	stack = (int *)malloc(sizeof(int)*heightsSize);
+	left = (int *)malloc(sizeof(int)*heightsSize);
+	right = (int *)malloc(sizeof(int)*heightsSize);
+
+	int i,stackIndex=0;
+	for (i = 0; i < heightsSize; i++)
+	{
+		while (stackIndex>0)
+		{
+			if (heights[i] < heights[stack[stackIndex-1]])
+			{
+				right[stack[stackIndex-1]] = i;
+				stackIndex--;
+			}
+			else
+				break;
+		}
+		if (stackIndex == 0)
+			left[i] = -1;
+		else
+			left[i] = stack[stackIndex-1];
+		stack[stackIndex++] = i;
+	}
+
+	while (stackIndex > 0)
+	{
+		right[stack[stackIndex - 1]] = heightsSize;
+		stackIndex--;
+	}
+	
+	int tmp = 0, max = 0;
+	for (i = 0; i < heightsSize; i++)
+	{
+		tmp = (right[i] - left[i] - 1)*heights[i];
+		max = max>tmp ? max : tmp;
+	}
+	return max;
+
+}
