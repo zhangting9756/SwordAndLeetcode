@@ -1050,7 +1050,8 @@ int maxAreaOfIsland(int** grid, int gridSize, int* gridColSize){
 	return max;
 }
 
-bool isRectangleOverlap(int* rec1, int rec1Size, int* rec2, int rec2Size){
+bool isRectangleOverlap(int* rec1, int rec1Size, int* rec2, int rec2Size)
+{
 	if(!rec1||!rec2)
 		return false;
 	if(rec1Size<=0 || rec2Size<=0)
